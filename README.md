@@ -1,2 +1,0 @@
-# KoalaKoin
-Website for KoalaKoin
