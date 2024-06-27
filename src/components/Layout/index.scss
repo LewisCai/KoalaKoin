@@ -102,72 +102,48 @@
 }
 
 .nav-bar {
-    background: #181818;
     width: 100%;
     height: 60px;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 3;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center the flex items horizontally */
+    border-bottom: 1px solid #000000; /* Add a bottom border to indicate the nav bar */
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    width: 65%; /* Adjust this width to fit within 35% to 65% range */
+}
 
-    .logo {
-        display: inline-block;
-        padding: 8px 16px;
+.logo-container {
+    display: flex;
+    align-items: center;
+}
 
-        img {
-            display: block;
-            width: 45px;
-            height: auto;
+.logo {
+    display: flex;
+    align-items: center;
 
-            &.sub-logo {
-                width: 50px;
-            }
-        }
+    img {
+        display: block;
+        width: 45px;
+        height: auto;
+        margin-right: 10px; /* Space between logo and brand name */
     }
+}
 
-    nav {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        height: 100%;
-        width: auto;
-        flex-grow: 1;
+.brand-name {
+    font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+    font-size: 15px; /* Adjust font size as needed */
+    color: #4d4d4d; /* Adjust color as needed */
+    padding-right: 100px;
+}
 
-        a {
-            font-size: 18px;
-            color: #4d4d4d;
-            display: inline-block;
-            line-height: 60px;
-            padding: 0 20px;
-            text-decoration: none;
-
-            &:hover {
-                color: #ffffff;
-
-                &:after {
-                    opacity: 1;
-                }
-            }
-
-            &:after {
-                content: attr(data-text);
-                font-size: 9px;
-                letter-spacing: 2px;
-                display: block;
-                width: 100%;
-                text-align: center;
-                opacity: 0;
-                transition: all 0.3s ease-out;
-            }
-
-        }
-
-
-    }
-
-    ul {
-        display: none;
-    }
+ul {
+    display: none;
 }
