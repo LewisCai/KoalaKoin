@@ -3,7 +3,7 @@ import Topbar from '../Topbar';
 import './index.scss';
 
 
-const Quiz = () => {
+const Questions = () => {
     return (
         <div className='App'>
             <Topbar />
@@ -14,4 +14,4 @@ const Quiz = () => {
     )
 }
 
-export default Quiz
+export default Questions

@@ -1,38 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); // Import the Roboto font from Google Fonts
+
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    margin: 0; // Remove default margin
+    padding: 0; // Remove default padding
+    height: 100%; // Set height to 100% for both body and html
+    font-family: 'Roboto', sans-serif; // Apply the Roboto font to the entire page
+}
+
+.separator {
+    width: 80%; // Set the width of the separator
+    margin: 40px auto; // Center the separator and add vertical margins
+    border: 0; // Remove the default border
+    border-top: 2px solid #ccc; // Add a custom border
 }
 
 .scroll-container {
-    height: 100vh;
-    overflow-y: scroll;
+    height: 100vh; // Set the height of the container to 100% of the viewport height
+    overflow-y: scroll; // Enable vertical scrolling
 }
 
 .section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: white;
-    text-align: center;
-    padding: 20px;
+    background-color: #000;
+    display: flex; // Use flexbox for layout
+    flex-direction: column; // Arrange children in a column
+    justify-content: left; // Center children vertically
+    padding: 20px; // Add padding around the section
+    box-sizing: border-box; // Include padding and border in the element's total width and height
+    text-align: left; // Center-align text within the section
 }
 
 #section1 {
-    background: #3498db;
+    height: 50vh; // Set each section's height to 100% of the viewport height
+    background: #ffffff; // Set the background color to white
+    color: #000; // Set the text color to black
+    padding: 40px; // Add additional padding
+    max-width: 1200px; // Set a maximum width to mimic an A4 page
+    margin: 0 auto; // Center the section horizontally
+}
+
+.small-text {
+    margin-top: 100px;
+    font-size: 1.5em; // Set the font size
+    color: #666; // Set the text color to light gray
+    margin-bottom: 10px; // Add a margin below the text
+    text-align: left;
+}
+
+.headline {
+    font-size: 5em; // Set the font size
+    font-weight: bold; // Make the text bold
+    margin: 10px 0; // Add vertical margins
+}
+
+.description {
+    font-size: 2em; // Set the font size
+    color: #333; // Set the text color to dark gray
+    margin: 10px 0 20px; // Add vertical margins with extra space below
+}
+
+.test-button {
+    margin-top: 50px;
+    background-color: #6a5acd; // Set the button's background color to purple
+    color: #fff; // Set the text color to white
+    border: none; // Remove any default border
+    border-radius: 4px; // Add rounded corners
+    padding: 10px 20px; // Add padding inside the button
+    font-size: 2em; // Set the font size
+    cursor: pointer; // Change the cursor to a pointer on hover
+    margin-left: 20px; // Add space between the headline and the button
+    align-self: center; // Align the button to the start of the flex container
 }
 
 #section2 {
-    background: #e74c3c;
+    height: 80vh; // Set each section's height to 100% of the viewport height
+    background: #ffffff; // Set the background color to white
+    color: #000; // Set the text color to black
+    padding: 20px; // Add additional padding
+    max-width: 1600px; // Set a maximum width to mimic an A4 page
+    margin: 0 auto; // Center the section horizontally
+}
+
+.headline2 {
+    text-align: center;
+    font-size: 5em; // Set the font size
+    font-weight: bold; // Make the text bold
+    margin: 10px 0; // Add vertical margins
+}
+
+.description2 {
+    text-align: center;
+    font-size: 2em; // Set the font size
+    color: #333; // Set the text color to dark gray
+    margin: 10px 0 20px; // Add vertical margins with extra space below
+}
+
+.small-text2 {
+    margin-top: 100px;
+    font-size: 1.5em; // Set the font size
+    color: #666; // Set the text color to light gray
+    margin-bottom: 10px; // Add a margin below the text
+    text-align: left;
 }
 
 #section3 {
-    background: #2ecc71;
+    height: 80vh; // Set each section's height to 100% of the viewport height
+    background: #ffffff; // Set the background color to white
+    color: #000; // Set the text color to black
+    padding: 40px; // Add additional padding
+    max-width: 1200px; // Set a maximum width to mimic an A4 page
+    margin: 0 auto; // Center the section horizontally
 }
 
 #section4 {
-    background: #f1c40f;
+    height: 80vh; // Set each section's height to 100% of the viewport height
+    background: #ffffff; // Set the background color to white
+    color: #000; // Set the text color to black
+    padding: 40px; // Add additional padding
+    max-width: 1200px; // Set a maximum width to mimic an A4 page
+    margin: 0 auto; // Center the section horizontally}
+}
+
+.image {
+    align-self: center;
+    margin-top: 20px;;
+    max-width: 30%; // Ensure image does not exceed container width
+    height: auto; // Maintain aspect ratio
+    margin: 20px 0; // Add margin above and below the image
+    border-radius: 5px; // Add border radius for rounded corners
+}
+
+.KoalaImage {
+    align-self: center;
+    margin-top: 20px;;
+    height: auto; // Maintain aspect ratio
+    margin: 20px 0; // Add margin above and below the image
+    border-radius: 5px; // Add border radius for rounded corners
 }
