@@ -23,15 +23,15 @@ const Home = () => {
             <hr className="separator" />
 
             <div id="section3" className="section">
-                <h1 className='headline2'>Company Background</h1> {/* Headline for section 3 */}
-                <p className="description2">KoalaKoin is designed to be a unique educational initiative, making financial literacy highly accessible, fun and relevant for young Australians. Our approach will be a combination of interactive digital content, real-world simulations and community engagement to create a comprehensive learning experience. In targeting high school students and young adults, we aim to create a movement toward financial confidence and competence from a young age.</p> {/* Description for section 3 */}
+                <h1 className='headline3'>Company Background</h1> {/* Headline for section 3 */}
+                <p className="description3">KoalaKoin is designed to be a unique educational initiative, making financial literacy highly accessible, fun and relevant for young Australians. Our approach will be a combination of interactive digital content, real-world simulations and community engagement to create a comprehensive learning experience. In targeting high school students and young adults, we aim to create a movement toward financial confidence and competence from a young age.</p> {/* Description for section 3 */}
                 <img src={backgroundImage} alt="Background" className="image" />
             </div>
             <hr className="separator" />
 
             <div id="section4" className="section">
-                <h1 className='headline2'>Company Goals</h1> {/* Headline for section 4 */}
-                <p className="description2">Our goal is to empower young Australians with essential financial literacy skills, enabling them to make informed and responsible financial decisions throughout their lives. In 5 years, we aim to be the leading financial literacy platform for young Australians, reaching over one million users nationwide, with engaging, practical and impactful financial education.</p> {/* Description for section 4 */}
+                <h1 className='headline3'>Company Goals</h1> {/* Headline for section 4 */}
+                <p className="description3">Our goal is to empower young Australians with essential financial literacy skills, enabling them to make informed and responsible financial decisions throughout their lives. In 5 years, we aim to be the leading financial literacy platform for young Australians, reaching over one million users nationwide, with engaging, practical and impactful financial education.</p> {/* Description for section 4 */}
                 <img src={goalsImage} alt="Goals" className="image" />
             </div>
         </div>

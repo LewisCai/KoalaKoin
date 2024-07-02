@@ -120,6 +120,21 @@ body, html {
     margin: 0 auto; // Center the section horizontally}
 }
 
+.headline3 {
+    text-align: left;
+    font-size: 5em; // Set the font size
+    font-weight: bold; // Make the text bold
+    margin: 10px 0; // Add vertical margins
+}
+
+.description3 {
+    text-align: left;
+    font-size: 2em; // Set the font size
+    color: #333; // Set the text color to dark gray
+    margin: 10px 0 20px; // Add vertical margins with extra space below
+}
+
+
 .image {
     align-self: center;
     margin-top: 20px;;
