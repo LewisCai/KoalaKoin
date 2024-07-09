@@ -4,6 +4,7 @@ import './index.scss';
 import LogoL from '../../assets/images/bluelogo.png';
 import LoginButton from '../LoginButton'; // Adjust the import path according to your project structure
 import { useAuth0 } from '@auth0/auth0-react';
+import SignupButton from '../SignupButton';
 
 const Topbar = () => {
   const { isAuthenticated } = useAuth0();
@@ -33,9 +34,6 @@ const Topbar = () => {
         ) : (
           <>
             <LoginButton />
-            <NavLink exact="true" activeclassname='active' className="nav-link signup" to='/signup'>
-              Sign up
-            </NavLink>
           </>
         )}
       </div>
