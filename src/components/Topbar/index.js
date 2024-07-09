@@ -1,6 +1,8 @@
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './index.scss';
 import LogoL from '../../assets/images/bluelogo.png';
+import LoginButton from '../LoginButton'; // Adjust the import path according to your project structure
 
 const Topbar = () => (
     <div className='nav-bar'>
@@ -20,9 +22,7 @@ const Topbar = () => (
             <div className='brand-name'>Koala Koin</div>
         </div>
         <div className='right'>
-            <NavLink exact="true" activeclassname='active' className="nav-link" to='/login'>
-                Log in
-            </NavLink>
+            <LoginButton />  {/* Use the LoginButton here */}
             <NavLink exact="true" activeclassname='active' className="nav-link signup" to='/signup'>
                 Sign up
             </NavLink>
