@@ -1,0 +1,112 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #616161;
+    overflow-y: scroll; /* Enable vertical scrolling */
+  }
+  
+  .test-page {
+    background: url('../../assets/images/koalakoinBackground2.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  
+  .test-container {
+    max-width: 1200px;
+    margin: 0px auto;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+  
+  .question-block {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    height: 50vh;
+
+  }
+  
+  .question {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;  /* Make the question text bold */
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+  }
+  
+  .options label {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 1.7em;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .options input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .options label:hover {
+    color: #007bff;
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .navigation-buttons button {
+    background-color: #0068d6;
+    color: #fff;
+    border: none;
+    padding: 30px 60px;
+    font-size: 1.4em;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .navigation-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  .navigation-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #007bff;
+    transition: width 0.3s;
+  }
+  

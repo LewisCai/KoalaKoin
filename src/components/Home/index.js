@@ -4,6 +4,11 @@ import goalsImage from '../../assets/images/whitelogo.png'; // Adjust the path i
 import koalaImage from '../../assets/images/koalaimage.png'; // Adjust the path if necessary
 
 const Home = () => {
+  const navigateToTest = () => {
+    //window.location.href = 'https://www.koalakoin.org/test/'; // Replace with the actual URL of the new page
+    window.location.href = '/test'; // Replace with the actual URL of the new page
+  };
+
   return (
     <div class="scroll-container">
       <div id="section1" className="section">
@@ -11,8 +16,8 @@ const Home = () => {
           <p class="small-text">Welcome to KoalaKoin.</p> {/* Small introductory text */}
           <h1 class="headline">Take the KoKoPersonalities test</h1> {/* Main headline */}
           <p class="description">KoKoPersonalities test can help you understand your personality when it comes to financial responsibility.</p> {/* Description text */}
-          <button class="test-button">Get Tested</button> {/* Button for the call-to-action */}
-        </div>
+          <button className="test-button" onClick={navigateToTest}>Get Tested</button> {/* Button for the call-to-action */}
+          </div>
       </div>
 
       <div id="section2" className="section">
