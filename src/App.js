@@ -6,10 +6,12 @@ import Course from './components/Course';
 import Profile from './components/Profile';
 import Test from './components/Test';
 import TestResult from './components/TestResult';
+import { TestResultProvider } from './TestResultContext';
+
 
 function App() {
   return (
-    <>    
+    <TestResultProvider>    
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -20,7 +22,7 @@ function App() {
 
       </Route>
     </Routes>
-    </>
+    </TestResultProvider>
 
   );
 }

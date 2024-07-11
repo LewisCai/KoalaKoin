@@ -2,11 +2,14 @@ import './index.scss'; // Import the CSS file for styling
 import blueLogo from '../../assets/images/bluelogo.png'; // Replace with your image path
 import goalsImage from '../../assets/images/whitelogo.png'; // Adjust the path if necessary
 import koalaImage from '../../assets/images/koalaimage.png'; // Adjust the path if necessary
+import { useNavigate } from 'react-router-dom';
+
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const navigateToTest = () => {
-    //window.location.href = 'https://www.koalakoin.org/test/'; // Replace with the actual URL of the new page
-    window.location.href = '/test'; // Replace with the actual URL of the new page
+    navigate('/test'); // Programmatically navigate to the test page
   };
 
   return (
