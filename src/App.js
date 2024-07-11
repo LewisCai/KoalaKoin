@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Course from './components/Course';
 import Profile from './components/Profile';
 import Test from './components/Test';
+import TestResult from './components/TestResult';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="test" element={<Test />} />
         <Route path="course" element={<Course />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="testresult" element={<TestResult />} /> {/* New result page */}
+
       </Route>
     </Routes>
     </>

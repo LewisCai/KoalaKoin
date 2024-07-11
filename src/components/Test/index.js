@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './index.scss';
+import { useNavigate } from 'react-router-dom';
+
 
 const questions = [
   {
@@ -342,6 +344,8 @@ const Test = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
   const [score, setScore] = useState(0);
+  const navigate = useNavigate(); // Initialize useNavigate
+
 
   const questionsPerPage = 5;
   const totalPages = Math.ceil(questions.length / questionsPerPage);
@@ -444,7 +448,12 @@ const Test = () => {
     const answeredQuestions = answers.filter(answer => answer !== null).length;
     return (answeredQuestions / questions.length) * 100;
   };
-  
+
+  const handleSubmit = () => {
+    // Navigate to the result page
+    navigate('/testresult', { state: { score } });
+  };
+
   return (
     <div className="test-page">
       <div className="test-container">
@@ -456,8 +465,8 @@ const Test = () => {
 
           )}
           {currentPage === totalPages - 1 && areAllQuestionsAnswered() && (
-            <button onClick={() => alert(`Test submitted! Your score is ${score.toFixed(2)}%.`)}>Submit</button>
-          )}
+            <button onClick={handleSubmit}>Submit</button>
+        )}
         </div>
         <div className="progress-bar">
           <div className="progress" style={{ width: `${getProgress()}%` }}></div>
