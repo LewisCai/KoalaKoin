@@ -18,7 +18,7 @@
   }
   
   .test-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0px auto;
     background: #ffffff;
     padding: 5px;
@@ -36,7 +36,7 @@
     margin-bottom: 5px;
     padding: 5px;
     border-bottom: 1px solid #ccc;
-    height: 50vh;
+    height: 40vh;
 
   }
   
@@ -56,7 +56,7 @@
   .options label {
     margin-bottom: 30px;
     margin-top: 20px;
-    font-size: 1.7em;
+    font-size: 1.8em;
     cursor: pointer;
     transition: color 0.3s;
   }
@@ -84,6 +84,7 @@
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-bottom: 20px;
   }
   
   .navigation-buttons button:hover {

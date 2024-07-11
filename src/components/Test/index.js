@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './index.scss';
 
 const questions = [
@@ -86,8 +86,8 @@ const questions = [
     question: "How often do you create a budget for your expenses?",
     options: [
       "Rarely",
-      "Never",
       "Always",
+      "Never",
       "Sometimes"
     ],
   },
@@ -121,10 +121,10 @@ const questions = [
   {
     question: "Which of these quotes resonates with you the most?",
     options: [
-      "Better safe than sorry.",
-      "Look before you leap.",
-      "No risk, no gain.",
-      "Go big or go home!"
+      "\"Better safe than sorry.\"",
+      "\"Look before you leap.\"",
+      "\"No risk, no gain.\"",
+      "\"Go big or go home!\""
     ],
   },
   {
@@ -145,80 +145,326 @@ const questions = [
       "As quickly as possible, let's cash in!"
     ],
   },
+  {
+    question: "\"High Risk, High Rewards\"?",
+    options: [
+      "More like high risk, high stress",
+      "Maybe but be careful",
+      "Let's explore my options",
+      "Bring it on!"
+    ],
+  },
+  {
+    question: "You're given $10,000 to invest. What do you do?",
+    options: [
+      "Invest in safe options",
+      "Keep it in my saving accounts for now",
+      "Half safe, half risky",
+      "Free money anyway so high risk all the way"
+    ],
+  },
+  {
+    question: "Do you ever check your investment portfolio?",
+    options: [
+      "Rarely",
+      "Every few months",
+      "Monthly",
+      "Daily"
+    ],
+  },
+  {
+    question: "How do you prefer earning your money?",
+    options: [
+      "Climbing the corporate ladder!!!",
+      "A stable job and side gigs",
+      "Freelancing",
+      "Running my own business"
+    ],
+  },
+  {
+    question: "How do you feel about job security?",
+    options: [
+      "I need a stable job to be able to sleep at night!",
+      "Important, but I don't mind a bit of uncertainty",
+      "Some security is for sure nice, but I want to try out new opportunity",
+      "I want flexibility"
+    ],
+  },
+  {
+    question: "How would you describe your source of income?",
+    options: [
+      "A full-time job",
+      "I have a job and do a bit of side hustle",
+      "Multiple part-time jobs",
+      "I run my own business"
+    ],
+  },
+  {
+    question: "Will you want to run your own business?",
+    options: [
+      "I don't think I'm made for it",
+      "Not now I would say",
+      "Yeah, I'm planning to in the future",
+      "I'm running one"
+    ],
+  },
+  {
+    question: "What would you be most comfortable with?",
+    options: [
+      "\"Workin' nine to five, what a way to make a livin'\"",
+      "A full-time job and some freelance work",
+      "Mostly freelance work",
+      "Full-time freelancing or running my own business"
+    ],
+  },
+  {
+    question: "Will you do job-hopping for better income?",
+    options: [
+      "Probably not",
+      "Maybe if the offer is good",
+      "For sure"
+    ],
+  },
+  {
+    question: "Which of these options do you relate to the most?",
+    options: [
+      "Stable work, stable life",
+      "Don't put all your eggs in one basket",
+      "God favors the bold",
+      "No guts, no glory"
+    ],
+  },
+  {
+    question: "Pick one option",
+    options: [
+      "Climbing the ladder is the way to go",
+      "Be my own boss"
+    ],
+  },
+  {
+    question: "What is your preferred income variability?",
+    options: [
+      "One consistent source is good",
+      "Some variability but prefer stability",
+      "More variability, more opportunity",
+      "More variability, more earning"
+    ],
+  },
+  {
+    question: "How do you typically find new work opportunities?",
+    options: [
+      "Climbing the ladder at my current place",
+      "Networking",
+      "Actively seeking and applying for jobs",
+      "Create new business and ventures"
+    ],
+  },
+  {
+    question: "How do you save?",
+    options: [
+      "I have a strict savings plan and I follow it religiously",
+      "I save regularly but sometimes miss a few months",
+      "I save when I have extra money",
+      "Whatever is left after my spending"
+    ],
+  },
+  {
+    question: "When you receive your paycheck, what is your first thought?",
+    options: [
+      "Set aside a portion for savings immediately",
+      "Pay all my bills and then save",
+      "Spend first, and save what's left",
+      "Spend it all"
+    ],
+  },
+  {
+    question: "Do you have an emergency fund?",
+    options: [
+      "Yes",
+      "No",
+      "You only live once so why bother?"
+    ],
+  },
+  {
+    question: "Do you budget?",
+    options: [
+      "Yeah, I have a detailed budget and I stick to it",
+      "Most of the time",
+      "I occasionally do it but rarely follow it",
+      "Too restrictive for me"
+    ],
+  },
+  {
+    question: "What is your saving goal?",
+    options: [
+      "Long-term savings and substantial emergency fund",
+      "Saving enough for major purchases like a house down payment",
+      "Saving for immediate needs and short-term goals",
+      "Putting money aside whenever I can"
+    ],
+  },
+  {
+    question: "Are you happy with your savings now?",
+    options: [
+      "Yes",
+      "I'm comfortable",
+      "Not really",
+      "No"
+    ],
+  },
+  {
+    question: "You make an extra $200 this week:",
+    options: [
+      "Save all of it",
+      "Save most of it but have some fun",
+      "Spend most of it",
+      "It's free money"
+    ],
+  },
+  {
+    question: "Will you be able to survive for 3 months just on your savings?",
+    options: [
+      "Yes",
+      "No"
+    ],
+  },
+  {
+    question: "Would you consider yourself a good saver?",
+    options: [
+      "Yes",
+      "Maybe",
+      "No"
+    ],
+  },
 ];
 
 const Test = () => {
-    const [currentPage, setCurrentPage] = useState(0);
-    const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const [currentPage, setCurrentPage] = useState(0);
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const [score, setScore] = useState(0);
+
+  const questionsPerPage = 5;
+  const totalPages = Math.ceil(questions.length / questionsPerPage);
+  const questionRefs = useRef(questions.map(() => React.createRef()));
+
+  const handleOptionChange = (questionIndex, optionIndex) => {
+    const newAnswers = [...answers];
+    newAnswers[questionIndex] = optionIndex;
+    setAnswers(newAnswers);
+    calculateScore(newAnswers);
   
-    const questionsPerPage = 3;
-    const totalPages = Math.ceil(questions.length / questionsPerPage);
+    // Scroll to the next question if it exists
+    const nextQuestionIndex = questionIndex + 1;
+    if (nextQuestionIndex < questions.length) {
+      const nextQuestionRef = questionRefs.current[nextQuestionIndex]?.current;
+      if (nextQuestionRef) {
+        const rect = nextQuestionRef.getBoundingClientRect();
+        const offset = window.scrollY + rect.top - 100; // Adjust the 100 value to fine-tune the scroll distance
   
-    const handleOptionChange = (questionIndex, optionIndex) => {
-      const newAnswers = [...answers];
-      newAnswers[questionIndex] = optionIndex;
-      setAnswers(newAnswers);
-    };
-  
-    const areAllQuestionsAnswered = () => {
-      const startIndex = currentPage * questionsPerPage;
-      const endIndex = startIndex + questionsPerPage;
-      for (let i = startIndex; i < endIndex; i++) {
-        if (answers[i] === null) {
-          return false;
-        }
+        window.scrollTo({
+          top: offset,
+          behavior: 'smooth'
+        });
       }
-      return true;
-    };
-  
-    const renderQuestions = () => {
-      const startIndex = currentPage * questionsPerPage;
-      const endIndex = startIndex + questionsPerPage;
-      return questions.slice(startIndex, endIndex).map((q, index) => (
-        <div key={startIndex + index} className="question-block">
-          <p className="question">{q.question}</p>
-          <div className="options">
-            {q.options.map((option, optionIndex) => (
-              <label key={optionIndex}>
-                <input
-                  type="radio"
-                  name={`question-${startIndex + index}`}
-                  value={optionIndex}
-                  checked={answers[startIndex + index] === optionIndex}
-                  onChange={() => handleOptionChange(startIndex + index, optionIndex)}
-                />
-                {option}
-              </label>
-            ))}
-          </div>
-        </div>
-      ));
-    };
-  
-    const getProgress = () => {
-      const answeredQuestions = answers.filter(answer => answer !== null).length;
-      return (answeredQuestions / questions.length) * 100;
-    };
-  
-    return (
-      <div className="test-page">
-        <div className="test-container">
-          <h1 className="title">KoKoPersonalities</h1>
-          {renderQuestions()}
-          <div className="navigation-buttons">
-            {currentPage < totalPages - 1 && areAllQuestionsAnswered() && (
-              <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
-            )}
-            {currentPage === totalPages - 1 && areAllQuestionsAnswered() && (
-              <button onClick={() => alert('Test submitted!')}>Submit</button>
-            )}
-          </div>
-          <div className="progress-bar">
-            <div className="progress" style={{ width: `${getProgress()}%` }}></div>
-          </div>
+    }
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const areAllQuestionsAnswered = () => {
+    const startIndex = currentPage * questionsPerPage;
+    const endIndex = startIndex + questionsPerPage;
+    for (let i = startIndex; i < endIndex; i++) {
+      if (answers[i] === null) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  const calculateScore = (answers) => {
+    const totalQuestions = answers.length;
+    let totalScore = 0;
+
+    answers.forEach((answer) => {
+      if (answer !== null) {
+        const questionOptionsLength = questions[answers.indexOf(answer)].options.length;
+        const maxIndex = questionOptionsLength - 1;
+        totalScore += ((maxIndex - answer) / maxIndex) * 100;
+      }
+    });
+
+    setScore(totalScore / totalQuestions);
+  };
+
+  const renderQuestions = () => {
+    const startIndex = currentPage * questionsPerPage;
+    const endIndex = startIndex + questionsPerPage;
+    return questions.slice(startIndex, endIndex).map((q, index) => (
+      <div
+        key={startIndex + index}
+        className="question-block"
+        ref={questionRefs.current[startIndex + index]}
+      >
+        <p className="question">{q.question}</p>
+        <div className="options">
+          {q.options.map((option, optionIndex) => (
+            <label key={optionIndex}>
+              <input
+                type="radio"
+                name={`question-${startIndex + index}`}
+                value={optionIndex}
+                checked={answers[startIndex + index] === optionIndex}
+                onChange={() => handleOptionChange(startIndex + index, optionIndex)}
+              />
+              {option}
+            </label>
+          ))}
         </div>
       </div>
-    );
+    ));
+  };
+
+  useEffect(() => {
+    if (areAllQuestionsAnswered()) {
+      window.scrollBy({
+        top: 100, // Adjust this value to control how far down you scroll
+        behavior: 'smooth'
+      });
+    }
+  }, [answers, currentPage]); // Add dependencies to trigger the effect when answers or currentPage change
+
+  const getProgress = () => {
+    const answeredQuestions = answers.filter(answer => answer !== null).length;
+    return (answeredQuestions / questions.length) * 100;
   };
   
-  export default Test;
+  return (
+    <div className="test-page">
+      <div className="test-container">
+        <h1 className="title">KoKoPersonalities</h1>
+        {renderQuestions()}
+        <div className="navigation-buttons">
+          {currentPage < totalPages - 1 && areAllQuestionsAnswered() && (
+            <button onClick={handleNextPage}>Next</button>
+
+          )}
+          {currentPage === totalPages - 1 && areAllQuestionsAnswered() && (
+            <button onClick={() => alert(`Test submitted! Your score is ${score.toFixed(2)}%.`)}>Submit</button>
+          )}
+        </div>
+        <div className="progress-bar">
+          <div className="progress" style={{ width: `${getProgress()}%` }}></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Test;

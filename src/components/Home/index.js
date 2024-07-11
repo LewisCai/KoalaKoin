@@ -14,8 +14,8 @@ const Home = () => {
       <div id="section1" className="section">
         <div class="content-wrapper">
           <p class="small-text">Welcome to KoalaKoin.</p> {/* Small introductory text */}
-          <h1 class="headline">Take the KoKoPersonalities test</h1> {/* Main headline */}
-          <p class="description">KoKoPersonalities test can help you understand your personality when it comes to financial responsibility.</p> {/* Description text */}
+          <h1 class="headline">Take The KoKoPersonalities Test</h1> {/* Main headline */}
+          <p class="description">KoKoPersonalities Test can help you understand your personality when it comes to financial responsibility.</p> {/* Description text */}
           <button className="test-button" onClick={navigateToTest}>Get Tested</button> {/* Button for the call-to-action */}
           </div>
       </div>
@@ -76,7 +76,6 @@ const Home = () => {
             </div>
         </div>
     </div>
-
   );
 };
 
