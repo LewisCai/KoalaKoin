@@ -341,139 +341,98 @@ const questions = [
 ];
 
 const Test = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
-  const [score, setScore] = useState(0);
-  const navigate = useNavigate(); // Initialize useNavigate
-
-
-  const questionsPerPage = 5;
-  const totalPages = Math.ceil(questions.length / questionsPerPage);
-  const questionRefs = useRef(questions.map(() => React.createRef()));
-
-  const handleOptionChange = (questionIndex, optionIndex) => {
-    const newAnswers = [...answers];
-    newAnswers[questionIndex] = optionIndex;
-    setAnswers(newAnswers);
-    calculateScore(newAnswers);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+    const navigate = useNavigate();
   
-    // Scroll to the next question if it exists
-    const nextQuestionIndex = questionIndex + 1;
-    if (nextQuestionIndex < questions.length) {
-      const nextQuestionRef = questionRefs.current[nextQuestionIndex]?.current;
-      if (nextQuestionRef) {
-        const rect = nextQuestionRef.getBoundingClientRect();
-        const offset = window.scrollY + rect.top - 100; // Adjust the 100 value to fine-tune the scroll distance
+    const handleOptionChange = (questionIndex, optionIndex) => {
+      const newAnswers = [...answers];
+      newAnswers[questionIndex] = optionIndex;
+      setAnswers(newAnswers);
   
-        window.scrollTo({
-          top: offset,
-          behavior: 'smooth'
-        });
+      // Automatically go to the next page
+      if (questionIndex < questions.length - 1) {
+        setTimeout(() => {
+          setCurrentPage(currentPage + 1);
+        }, 0); // Add a slight delay for better UX
+      } else if (questionIndex === questions.length - 1) {
+        calculateResult(newAnswers);
       }
-    }
-  };
-
-  const handleNextPage = () => {
-    setCurrentPage(currentPage + 1);
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  const areAllQuestionsAnswered = () => {
-    const startIndex = currentPage * questionsPerPage;
-    const endIndex = startIndex + questionsPerPage;
-    for (let i = startIndex; i < endIndex; i++) {
-      if (answers[i] === null) {
-        return false;
+    };
+  
+    const handleNextPage = () => {
+      if (currentPage < questions.length - 1 && answers[currentPage] !== null) {
+        setCurrentPage(currentPage + 1);
       }
-    }
-    return true;
-  };
-
-  const calculateScore = (answers) => {
-    const totalQuestions = answers.length;
-    let totalScore = 0;
-
-    answers.forEach((answer) => {
-      if (answer !== null) {
-        const questionOptionsLength = questions[answers.indexOf(answer)].options.length;
-        const maxIndex = questionOptionsLength - 1;
-        totalScore += ((maxIndex - answer) / maxIndex) * 100;
+    };
+  
+    const handlePrevPage = () => {
+      if (currentPage > 0) {
+        setCurrentPage(currentPage - 1);
       }
-    });
-
-    setScore(totalScore / totalQuestions);
-  };
-
-  const renderQuestions = () => {
-    const startIndex = currentPage * questionsPerPage;
-    const endIndex = startIndex + questionsPerPage;
-    return questions.slice(startIndex, endIndex).map((q, index) => (
-      <div
-        key={startIndex + index}
-        className="question-block"
-        ref={questionRefs.current[startIndex + index]}
-      >
-        <p className="question">{q.question}</p>
-        <div className="options">
-          {q.options.map((option, optionIndex) => (
-            <label key={optionIndex}>
-              <input
-                type="radio"
-                name={`question-${startIndex + index}`}
-                value={optionIndex}
-                checked={answers[startIndex + index] === optionIndex}
-                onChange={() => handleOptionChange(startIndex + index, optionIndex)}
-              />
-              {option}
-            </label>
-          ))}
-        </div>
-      </div>
-    ));
-  };
-
-  useEffect(() => {
-    if (areAllQuestionsAnswered()) {
-      window.scrollBy({
-        top: 100, // Adjust this value to control how far down you scroll
-        behavior: 'smooth'
+    };
+  
+    const calculateResult = (answers) => {
+      // Assuming the first option is the best (100%) and the last option is the worst (0%)
+      const totalQuestions = questions.length;
+      let score = 0;
+  
+      answers.forEach((answer, index) => {
+        const optionsCount = questions[index].options.length;
+        const weight = (optionsCount - answer - 1) / (optionsCount - 1); // Calculate weight based on the answer position
+        score += weight * 100; // Convert to percentage
       });
-    }
-  }, [answers, currentPage]); // Add dependencies to trigger the effect when answers or currentPage change
-
-  const getProgress = () => {
-    const answeredQuestions = answers.filter(answer => answer !== null).length;
-    return (answeredQuestions / questions.length) * 100;
-  };
-
-  const handleSubmit = () => {
-    // Navigate to the result page
-    navigate('/testresult', { state: { score } });
-  };
-
-  return (
-    <div className="test-page">
-      <div className="test-container">
-        <h1 className="title">KoKoPersonalities</h1>
-        {renderQuestions()}
-        <div className="navigation-buttons">
-          {currentPage < totalPages - 1 && areAllQuestionsAnswered() && (
-            <button onClick={handleNextPage}>Next</button>
-
-          )}
-          {currentPage === totalPages - 1 && areAllQuestionsAnswered() && (
-            <button onClick={handleSubmit}>Submit</button>
-        )}
+  
+      score = score / totalQuestions; // Average score
+  
+      navigate('/testresult', { state: { score } }); // Navigate to result page with score
+    };
+  
+    const renderQuestions = () => {
+      return questions.map((q, index) => (
+        <div
+          key={index}
+          className={`question-block ${index === currentPage ? 'active' : 'hidden'}`}
+        >
+          <h2>{q.question}</h2>
+          <div className="options">
+            {q.options.map((option, optionIndex) => (
+              <div 
+                key={optionIndex} 
+                className={`option ${answers[index] === optionIndex ? 'selected' : ''}`}
+                onClick={() => handleOptionChange(index, optionIndex)}
+              >
+                {option}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="progress-bar">
-          <div className="progress" style={{ width: `${getProgress()}%` }}></div>
+      ));
+    };
+  
+    return (
+      <div className="test-page">
+        <div className="test-container">
+          <button 
+            className="nav-arrow left" 
+            onClick={handlePrevPage} 
+            disabled={currentPage === 0}
+          >
+            &#8592;
+          </button>
+          <div className="question-section">
+            {renderQuestions()}
+          </div>
+          <button 
+            className="nav-arrow right" 
+            onClick={handleNextPage} 
+            disabled={currentPage >= questions.length - 1 || answers[currentPage] === null}
+          >
+            &#8594;
+          </button>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default Test;
+    );
+  };
+  
+  export default Test;
