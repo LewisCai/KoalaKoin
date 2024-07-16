@@ -16,36 +16,36 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000000;
     background-color: #fff;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
-.left, .right {
-    flex: 1;
+.left, .center, .right {
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.left {
+    flex: 1;
 }
 
 .center {
     flex: 1;
-    display: flex;
-    align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+.right {
+    flex: 1;
+    justify-content: flex-end;
+}
 
-    img {
-        display: block;
-        width: 45px;
-        height: auto;
-        margin-right: 10px;
-    }
+.logo img {
+    display: block;
+    width: 45px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .brand-name {
@@ -59,6 +59,7 @@ body {
     font-size: 16px;
     color: #000000;
     padding: 10px 20px;
+
     &.active {
         font-weight: bold;
         color: #006eff;
@@ -71,15 +72,15 @@ body {
 }
 
 .search-input {
-    padding: 5px 10px 5px 35px; /* Increase padding to add space for the icon */
+    padding: 5px 10px 5px 35px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif; /* Match the font of the placeholder */
+    font-family: 'Roboto', sans-serif;
 
     &::placeholder {
-        font-family: 'Roboto', sans-serif; /* Ensure the placeholder font matches */
-        color: #999; /* Adjust placeholder color if needed */
+        font-family: 'Roboto', sans-serif;
+        color: #999;
     }
 }
 
@@ -92,115 +93,17 @@ body {
     pointer-events: none;
 }
 
-.nav-link.signup {
-    background-color: #4285f4;
-    color: #fff;
-    border-radius: 4px;
-    padding: 8px 16px;
-    text-align: center;
-}
 
 .page {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 60px; /* Offset to avoid overlap with the nav-bar */
+    top: 60px;
 }
 
-.container {
-    width: 100%;
-    will-change: contents;
-    height: 90%;
-    min-height: 566px;
-    position: absolute;
-    opacity: 0;
-    top: 5%;
-    margin: 0 auto;
-    z-index: 1;
-    transform-style: preserve-3d;
-    animation: fadeIn 1s forwards;
-    animation-delay: 1s;
-}
 
-.course-page,
-.contact-page {
-    .text-zone {
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 35%;
-        vertical-align: middle;
-        display: table-cell;
-        max-height: 90%;
 
-        h1 {
-            font-size: 53px;
-            font-family: 'Coolvetica';
-            color: #000000;
-            font-weight: 400;
-            margin-top: 0;
-            position: relative;
-            margin-bottom: 40px;
-            left: 10px;
 
-            &::before {
-                content: '<h1>';
-                font-family: 'La Belle Aurore';
-                color: #006eff;
-                font-size: 18px;
-                position: absolute;
-                margin-top: -10px;
-                left: -10px;
-                opacity: 0.6;
-                line-height: 18px;
-            }
-
-            &::after {
-                content: '</h1>';
-                font-family: 'La Belle Aurore';
-                color: #006eff;
-                font-size: 18px;
-                line-height: 18px;
-                position: absolute;
-                left: -30px;
-                bottom: -20px;
-                margin-left: 20px;
-                opacity: 0.6;
-            }
-        }
-
-        p {
-            font-size: 13px;
-            font-family: sans-serif;
-            color: #000000;
-            font-weight: 300;
-            min-width: fit-content;
-            line-height: 20px;
-            margin-top: 0;
-            margin-bottom: 20px;
-            animation: pulse 1s;
-
-            &:nth-of-type(1) {
-                animation-delay: 1.1s;
-            }
-
-            &:nth-of-type(2) {
-                animation-delay: 1.2s;
-            }
-
-            &:nth-of-type(3) {
-                animation-delay: 1.3s;
-            }
-        }
-    }
-
-    .text-animate-hover {
-        &:hover {
-            color: #3ba7ff;
-        }
-    }
-}
 
 @keyframes fadeIn {
     to {
@@ -214,5 +117,33 @@ body {
     }
     to {
         transform: scale(1);
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: row; /* Stack the elements vertically on smaller screens */
+        height: auto; /* Allow the nav-bar to expand as needed */
+        padding: 5px 5px;
+    }
+
+    .nav-link {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .search-container {
+        margin: 2px 0;
+    }
+
+    .brand-name {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        color: #4d4d4d;
+    }
+
+    .search-input {
+        width: 100%;
     }
 }
