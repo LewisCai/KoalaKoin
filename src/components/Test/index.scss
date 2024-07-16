@@ -104,24 +104,36 @@
     align-items: center;
     margin-top: 10px;
   }
-
+  
   .progress-bar {
+    display: flex;
     position: absolute;
     bottom: 100px;
     left: 20px;
     right: 20px;
-    height: 10px;
+    height: 15px; /* Increased height for better text visibility */
     background: #e0e0e0;
     border-radius: 5px;
     overflow: hidden;
+    align-items: center; /* Center items vertically */
   }
   
   .progress-bar-fill {
     height: 100%;
-    background: #4caf50;
+    background: #047bca;
     transition: width 0.5s;
   }
   
+  .progress-bar-text {
+    position: absolute;
+    width: 100%; /* Fill the entire width of the progress bar */
+    text-align: center; /* Center text horizontally */
+    font-size: 1em; /* Adjust font size as needed */
+    color: #020202;
+    font-weight: bold;
+    z-index: 1;
+  }
+
   .nav-arrow {
     background: none;
     border: none;
@@ -279,6 +291,8 @@
       background: #4caf50;
       transition: width 0.5s;
     }
+
+    
     
     .nav-arrow {
       background: none;

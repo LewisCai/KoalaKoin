@@ -413,12 +413,15 @@ const Test = () => {
     return (
       <div className="test-page">
         <div className="test-container">
-          <div className="progress-bar">
+        <div className="progress-bar">
             <div
               className="progress-bar-fill"
               style={{ width: `${((currentPage + 1) / questions.length) * 100}%` }}
             ></div>
-          </div>   
+            <span className="progress-bar-text">
+              {Math.round(((currentPage + 1) / questions.length) * 100)}%
+            </span>
+          </div>
           <button 
             className="nav-arrow left" 
             onClick={handlePrevPage} 
