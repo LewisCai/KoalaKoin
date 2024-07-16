@@ -281,6 +281,267 @@ body, html {
 }
 
 
+/* Media queries for responsiveness */
+@media (max-width: 923px) {
 
+    #section1 {
+        background-image: url('../../assets/images/koalakoinBackground2.png'); // Set the background image
+        color: #ffffff; // Set the text color to black
+        height: 100vh; // Set each section's height to 100% of the viewport height
+    
+        .small-text {
+            margin-top: 30vh;
+            font-size: 1em; // Set the font size
+            color: #ffffff; // Set the text color to black
+            margin-bottom: 10px; // Add a margin below the text
+            text-align: center;
+        }
+        
+        .headline {
+            color: #ffffff; // Set the text color to black
+            font-size: 3em; // Set the font size
+            font-weight: bold; // Make the text bold
+            margin: 10px 0; // Add vertical margins
+            text-align: center;
+        }
+        
+        .description {
+            color: #ffffff; // Set the text color to black
+            font-size: 1em; // Set the font size
+            margin: 10px 10px 20px; // Add vertical margins with extra space below
+            text-align: center;
+        }
+        
+        .test-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;        margin-top: 50px;
+            background-color: #6a5acd; // Set the button's background color to purple
+            color: #fff; // Set the text color to white
+            border: none; // Remove any default border
+            border-radius: 4px; // Add rounded corners
+            padding: 5px 10px; // Add padding inside the button
+            font-size: 1.5em; // Set the font size
+            cursor: pointer; // Change the cursor to a pointer on hover
+            margin: 0 auto; /* Center the button horizontally */
+        }    
+    }
+    
+    
+    #section2 {
+        //background-image: url('../../assets/images/koalakoinBackground2.png'); // Set the background image
+        color: #ffffff; // Set the text color to black
+        height: 50vh; // Set the section's height
+    
+        .content {
+            display: flex; // Use flexbox for layout
+            justify-content: space-between; // Space out text and image
+            align-items: center; // Align items vertically
+            max-width: 1200px; // Limit the maximum width of the content
+            width: 100%; // Ensure the content takes full width
+            margin: 0 auto; // Center the content horizontally
+        }
+    
+        .text-content {
+            flex: 1; // Allow text content to take up available space
+            padding: 20px; // Add padding around the text content
+    
+            .headline {
+                color: #000000; // Set the text color to dark gray
+                font-size: 2em; // Set the font size
+                font-weight: bold; // Make the text bold
+                margin: 10px 0; // Add vertical margins
+            }
+    
+            .description, .description2 {
+                font-size: 1em; // Set the font size
+                color: #333; // Set the text color to dark gray
+                margin: 10px 0 20px; // Add vertical margins with extra space below
+            }
+    
+            .small-text {
+                margin-top: 100px;
+                font-size: 1em; // Set the font size
+                color: #666; // Set the text color to light gray
+                margin-bottom: 10px; // Add a margin below the text
+            }
+        }
+    
+        .image-content {
+            flex: 1; // Allow image content to take up available space
+            display: flex; // Use flexbox to center the image
+            justify-content: center; // Center align the image within its container
+            align-items: center; // Center align the image vertically
+    
+            .KoalaImage {
+                max-width: 100%; // Ensure image does not exceed container width
+                height: auto; // Maintain aspect ratio
+                border-radius: 5px; // Add border radius for rounded corners
+            }
+        }
+    }
+    
+    
+    #section3 {
+        //background-image: url('../../assets/images/koalakoinBackground2.png'); // Set the background image
+        color: #ffffff; // Set the text color to black
+        height: 50vh; // Set each section's height to 100% of the viewport height
+    
+        .content {
+            display: flex; // Use flexbox for layout
+            justify-content: space-between; // Space out text and image
+            align-items: center; // Align items vertically
+            max-width: 1200px; // Limit the maximum width of the content
+            width: 100%; // Ensure the content takes full width
+            margin: 0 auto; // Center the content horizontally
+        }
+    
+        .text-content {
+            flex: 1; // Allow text content to take up available space
+            padding: 20px; // Add padding around the text content
+    
+            .headline {
+                color: #000000; // Set the text color
+                font-size: 2em; // Set the font size
+                font-weight: bold; // Make the text bold
+                margin: 10px 0; // Add vertical margins
+            }
+    
+            .description, .description2 {
+                font-size: 1em; // Set the font size
+                color: #333; // Set the text color to dark gray
+                margin: 10px 0 20px; // Add vertical margins with extra space below
+            }
+    
+            .small-text {
+                margin-top: 100px;
+                font-size: 1em; // Set the font size
+                color: #666; // Set the text color to light gray
+                margin-bottom: 10px; // Add a margin below the text
+            }
+        }
+    
+        .image-content {
+            flex: 1; // Allow image content to take up available space
+            display: flex; // Use flexbox to center the image
+            justify-content: center; // Center align the image within its container
+            align-items: center; // Center align the image vertically
+    
+            .image {
+                max-width: 50%; // Ensure image does not exceed container width
+                height: auto; // Maintain aspect ratio
+                border-radius: 5px; // Add border radius for rounded corners
+            }
+        }
+      
+    }
+    
+    #section4 {
+        //background-image: url('../../assets/images/koalakoinBackground2.png'); // Set the background image
+        color: #ffffff; // Set the text color to black
+        height: 50vh; // Set each section's height to 100% of the viewport height
+    
+        .content {
+            display: flex; // Use flexbox for layout
+            justify-content: space-between; // Space out text and image
+            align-items: center; // Align items vertically
+            max-width: 1200px; // Limit the maximum width of the content
+            width: 100%; // Ensure the content takes full width
+            margin: 0 auto; // Center the content horizontally
+        }
+    
+        .text-content {
+            flex: 1; // Allow text content to take up available space
+            padding: 20px; // Add padding around the text content
+    
+            .headline {
+                color: #000000; // Set the text color
+                font-size: 2em; // Set the font size
+                font-weight: bold; // Make the text bold
+                margin: 10px 0; // Add vertical margins
+            }
+    
+            .description, .description2 {
+                font-size: 1em; // Set the font size
+                color: #333; // Set the text color to dark gray
+                margin: 10px 0 20px; // Add vertical margins with extra space below
+            }
+    
+            .small-text {
+                margin-top: 100px;
+                font-size: 1em; // Set the font size
+                color: #666; // Set the text color to light gray
+                margin-bottom: 10px; // Add a margin below the text
+            }
+        }
+    
+        .image-content {
+            flex: 1; // Allow image content to take up available space
+            display: flex; // Use flexbox to center the image
+            justify-content: center; // Center align the image within its container
+            align-items: center; // Center align the image vertically
+    
+            .image {
+                max-width: 50%; // Ensure image does not exceed container width
+                height: auto; // Maintain aspect ratio
+                border-radius: 5px; // Add border radius for rounded corners
+            }
+        }
+    }
+    
+    #section5 {
+        background-image: url('../../assets/images/koalakoinBackground2.png'); // Set the background image
+        color: #000000; // Set the text color to black
+        height: 20vh; // Set each section's height to 50% of the viewport height
+        display: flex; // Use flexbox for layout
+        justify-content: center; // Center content horizontally
+        align-items: center; // Center content vertically
+        text-align: center; // Center-align text
+    
+        .footer-content {
+            max-width: 1200px; // Limit the maximum width of the footer content
+            width: 100%; // Ensure the content takes full width
+            padding: 20px; // Add padding around the content
+        }
+        
+        .footer-links {
+            display: flex; // Use flexbox for layout
+            justify-content: center; // Center links horizontally
+            flex-wrap: wrap; // Allow links to wrap to the next line if needed
+            margin: 20px 0; // Add vertical margins
+        }
+        
+        .footer-links a {
+            color: #000000; // Set the link color
+            text-decoration: none; // Remove underline from links
+            margin: 0 10px; // Add horizontal margins
+            font-size: 1em; // Set the font size
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline; // Underline links on hover
+        }
+        
+        .footer-social-icons {
+            display: flex; // Use flexbox for layout
+            justify-content: center; // Center icons horizontally
+            margin-top: 20px; // Add top margin
+        }
+        
+        .footer-social-icons a {
+            margin: 0 10px; // Add horizontal margins
+            color: #000000; // Set the icon color
+            font-size: 2em; // Set the icon size
+            padding: 10px; // Add padding inside the icons
+            transition: background-color 0.3s, color 0.3s; // Add transition for hover effect
+        }
+        
+        .footer-social-icons a:hover {
+            background-color: #88a2a8; // Change background color on hover
+            color: #ffffff; // Change icon color on hover
+        }
+        
+    }
+}
 
 
