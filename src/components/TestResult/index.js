@@ -109,22 +109,6 @@ const TestResult = () => {
 
   const personality = determinePersonalityType();
 
-  const getFinalScore = (category, score) => {
-    if (category === "frugalImpulsive") {
-      return score > 50 ? `Frugal ${Math.round(score)}%` : `Impulsive ${Math.round(100 - score)}%`;
-    }
-    if (category === "conservativeAggressive") {
-      return score > 50 ? `Conservative ${Math.round(score)}%` : `Aggressive ${Math.round(100 - score)}%`;
-    }
-    if (category === "traditionalEntrepreneurial") {
-      return score > 50 ? `Traditional ${Math.round(score)}%` : `Entrepreneurial ${Math.round(100 - score)}%`;
-    }
-    if (category === "saverAdHoc") {
-      return score > 50 ? `Saver ${Math.round(score)}%` : `Ad-hoc ${Math.round(100 - score)}%`;
-    }
-    return "";
-  };
-
   const detailedDescriptions = {
     frugalImpulsive: {
       Frugal: "Frugal spenders are disciplined, cost-conscious and they prefer making their purchases carefully. They value savings and avoid unnecessary spending, focusing on long-term financial stability.",
