@@ -3,7 +3,10 @@ import { useLocation } from "react-router-dom";
 import { useTestResult } from '../../TestResultContext'; // Correct relative path
 import personalityImage1 from "../../assets/images/personality1.png";
 import "./index.scss";
-import SliderComponent from "../Slider";
+import EarningHabitPage from "../EarningHabitPage";
+import InvestingHabitPage from "../InvestingHabitPage";
+import SavingHabitPage from "../SavingHabitPage";
+import SpendingHabitPage from "../SpendingHabitPage";
 
 const TestResult = () => {
   const location = useLocation();
@@ -154,74 +157,14 @@ const TestResult = () => {
             <button className="resultButton" onClick={() => setCurrentPage(1)}>Next</button>
           </div>
         );
-        case 1:
-          return (
-            <div className="result-category">
-              <p className="title">Spending</p>
-              <SliderComponent
-                label={resultCategories.frugalImpulsive > 50 ? "Frugal" : "Impulsive"}
-                score={resultCategories.frugalImpulsive}
-                leftLabel="Frugal"
-                rightLabel="Impulsive"
-              />
-              <div className="image-container">
-                <img src={personalityImage1} alt="Personality type illustration" />
-              </div>
-              <p className="description">{resultCategories.frugalImpulsive > 50 ? detailedDescriptions.frugalImpulsive.Frugal : detailedDescriptions.frugalImpulsive.Impulsive}</p>
-              <button  className="resultButton" onClick={() => setCurrentPage(2)}>Next</button>
-            </div>
-          );
+      case 1:
+        return <SpendingHabitPage resultCategories={resultCategories} setCurrentPage={setCurrentPage} detailedDescriptions={detailedDescriptions} />;
       case 2:
-        return (
-          <div className="result-category">
-            <p className="title">Investing</p>
-            <SliderComponent
-              label={resultCategories.conservativeAggressive > 50 ? "Conservative" : "Aggressive"}
-              score={resultCategories.conservativeAggressive}
-              leftLabel="Conservative"
-              rightLabel="Aggressive"
-            />
-            <div className="image-container">
-              <img src={personalityImage1} alt="Personality type illustration" />
-            </div>
-            <p className="description">{resultCategories.conservativeAggressive > 50 ? detailedDescriptions.conservativeAggressive.Conservative : detailedDescriptions.conservativeAggressive.Aggressive}</p>
-            <button  className="resultButton" onClick={() => setCurrentPage(3)}>Next</button>
-          </div>
-        );
+        return <InvestingHabitPage resultCategories={resultCategories} setCurrentPage={setCurrentPage} detailedDescriptions={detailedDescriptions} />;
       case 3:
-        return (
-          <div className="result-category">
-            <p className="title">Earning</p>
-            <SliderComponent
-              label={resultCategories.traditionalEntrepreneurial > 50 ? "Traditional" : "Entrepreneurial"}
-              score={resultCategories.traditionalEntrepreneurial}
-              leftLabel="Traditional"
-              rightLabel="Entrepreneurial"
-            />
-            <div className="image-container">
-              <img src={personalityImage1} alt="Personality type illustration" />
-            </div>
-            <p className="description">{resultCategories.traditionalEntrepreneurial > 50 ? detailedDescriptions.traditionalEntrepreneurial.Traditional : detailedDescriptions.traditionalEntrepreneurial.Entrepreneurial}</p>
-            <button  className="resultButton" onClick={() => setCurrentPage(4)}>Next</button>
-          </div>
-        );
+        return <EarningHabitPage resultCategories={resultCategories} setCurrentPage={setCurrentPage} detailedDescriptions={detailedDescriptions} />;
       case 4:
-        return (
-          <div className="result-category">
-            <p className="title">Saving</p>
-            <SliderComponent
-              label={resultCategories.saverAdHoc > 50 ? "Saver" : "Ad-hoc"}
-              score={resultCategories.saverAdHoc}
-              leftLabel="Saver"
-              rightLabel="Ad-hoc"
-            />
-            <div className="image-container">
-              <img src={personalityImage1} alt="Personality type illustration" />
-            </div>
-            <p className="description">{resultCategories.saverAdHoc > 50 ? detailedDescriptions.saverAdHoc.Saver : detailedDescriptions.saverAdHoc.AdHoc}</p>
-            <button  className="resultButton" onClick={() => setCurrentPage(0)}>Back to Summary</button>
-          </div>
-        );
+        return <SavingHabitPage resultCategories={resultCategories} setCurrentPage={setCurrentPage} detailedDescriptions={detailedDescriptions} />;
       default:
         return null;
     }

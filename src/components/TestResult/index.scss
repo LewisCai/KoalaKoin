@@ -36,7 +36,7 @@ body {
   background-size: cover;
 }
 
-.test-result, .detailed-results, .result-category {
+.test-result{
   background: #fff;
   padding: 40px;
   border-radius: 10px;
@@ -56,7 +56,7 @@ body {
 }
 
 .image-container img {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
 }
 
