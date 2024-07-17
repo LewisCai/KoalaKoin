@@ -21,8 +21,9 @@ const SpendingHabitPage = ({ resultCategories, currentPage, setCurrentPage, deta
           <SliderComponent
             label={isFrugal ? "Frugal" : "Impulsive"}
             score={isFrugal ? resultCategories.frugalImpulsive : 100 - resultCategories.frugalImpulsive}
-            leftLabel="Impulsive"
-            rightLabel="Frugal"
+            leftLabel="Frugal"
+            rightLabel="Impulsive"
+            fromLeft={isFrugal}
           />
           <p className="description">{isFrugal ? detailedDescriptions.frugalImpulsive.Frugal : detailedDescriptions.frugalImpulsive.Impulsive}</p>
         </div>

@@ -21,8 +21,9 @@ const InvestingHabitPage = ({ resultCategories, currentPage, setCurrentPage, det
           <SliderComponent
             label={isConservative ? "Conservative" : "Aggressive"}
             score={isConservative ? resultCategories.conservativeAggressive : 100 - resultCategories.conservativeAggressive}
-            leftLabel="Aggressive"
-            rightLabel="Conservative"
+            leftLabel="Conservative"
+            rightLabel="Aggressive"
+            fromLeft={isConservative}
           />
           <p className="description">{isConservative ? detailedDescriptions.conservativeAggressive.Conservative : detailedDescriptions.conservativeAggressive.Aggressive}</p>
         </div>

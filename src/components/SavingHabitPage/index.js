@@ -21,8 +21,9 @@ const SavingHabitPage = ({ resultCategories, currentPage, setCurrentPage, detail
           <SliderComponent
             label={isSaver ? "Saver" : "Ad-Hoc"}
             score={isSaver ? resultCategories.saverAdHoc : 100 - resultCategories.saverAdHoc}
-            leftLabel="Ad-Hoc"
-            rightLabel="Saver"
+            leftLabel="Saver"
+            rightLabel="Ad-Hoc"
+            fromLeft={isSaver}
           />
           <p className="description">{isSaver ? detailedDescriptions.saverAdHoc.Saver : detailedDescriptions.saverAdHoc.AdHoc}</p>
         </div>
