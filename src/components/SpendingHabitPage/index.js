@@ -20,7 +20,7 @@ const SpendingHabitPage = ({ resultCategories, setCurrentPage, detailedDescripti
         <div className="spending-text-container">
           <SliderComponent
             label={isFrugal ? "Frugal" : "Impulsive"}
-            score={resultCategories.frugalImpulsive}
+            score={isFrugal ? resultCategories.frugalImpulsive : 100-resultCategories.frugalImpulsive}
             leftLabel="Frugal"
             rightLabel="Impulsive"
           />

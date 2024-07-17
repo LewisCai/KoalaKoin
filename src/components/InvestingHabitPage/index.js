@@ -20,7 +20,7 @@ const InvestingHabitPage = ({ resultCategories, setCurrentPage, detailedDescript
         <div className="investing-text-container">
           <SliderComponent
             label={isConservative ? "Conservative" : "Aggressive"}
-            score={resultCategories.conservativeAggressive}
+            score={isConservative ? resultCategories.conservativeAggressive: 100-resultCategories.conservativeAggressive}
             leftLabel="Conservative"
             rightLabel="Aggressive"
           />

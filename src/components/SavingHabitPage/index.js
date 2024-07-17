@@ -20,7 +20,7 @@ const SavingHabitPage = ({ resultCategories, setCurrentPage, detailedDescription
         <div className="saving-text-container">
           <SliderComponent
             label={isSaver ? "Saver" : "Ad-hoc"}
-            score={resultCategories.saverAdHoc}
+            score={isSaver ? resultCategories.saverAdHoc : 100-resultCategories.saverAdHoc}
             leftLabel="Saver"
             rightLabel="Ad-hoc"
           />
