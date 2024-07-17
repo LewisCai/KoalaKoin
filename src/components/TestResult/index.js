@@ -151,26 +151,26 @@ const TestResult = () => {
             <div className="image-container">
               <img src={personalityImage1} alt="Personality type illustration" />
             </div>
-            <button onClick={() => setCurrentPage(1)}>Next</button>
+            <button className="resultButton" onClick={() => setCurrentPage(1)}>Next</button>
           </div>
         );
-      case 1:
-        return (
-          <div className="result-category">
-            <p className="title">Spending</p>
-            <SliderComponent
-              label={resultCategories.frugalImpulsive > 50 ? "Frugal" : "Impulsive"}
-              score={resultCategories.frugalImpulsive}
-              leftLabel="Frugal"
-              rightLabel="Impulsive"
-            />
-            <div className="image-container">
-              <img src={personalityImage1} alt="Personality type illustration" />
+        case 1:
+          return (
+            <div className="result-category">
+              <p className="title">Spending</p>
+              <SliderComponent
+                label={resultCategories.frugalImpulsive > 50 ? "Frugal" : "Impulsive"}
+                score={resultCategories.frugalImpulsive}
+                leftLabel="Frugal"
+                rightLabel="Impulsive"
+              />
+              <div className="image-container">
+                <img src={personalityImage1} alt="Personality type illustration" />
+              </div>
+              <p className="description">{resultCategories.frugalImpulsive > 50 ? detailedDescriptions.frugalImpulsive.Frugal : detailedDescriptions.frugalImpulsive.Impulsive}</p>
+              <button  className="resultButton" onClick={() => setCurrentPage(2)}>Next</button>
             </div>
-            <p className="description">{resultCategories.frugalImpulsive > 50 ? detailedDescriptions.frugalImpulsive.Frugal : detailedDescriptions.frugalImpulsive.Impulsive}</p>
-            <button onClick={() => setCurrentPage(2)}>Next</button>
-          </div>
-        );
+          );
       case 2:
         return (
           <div className="result-category">
@@ -185,7 +185,7 @@ const TestResult = () => {
               <img src={personalityImage1} alt="Personality type illustration" />
             </div>
             <p className="description">{resultCategories.conservativeAggressive > 50 ? detailedDescriptions.conservativeAggressive.Conservative : detailedDescriptions.conservativeAggressive.Aggressive}</p>
-            <button onClick={() => setCurrentPage(3)}>Next</button>
+            <button  className="resultButton" onClick={() => setCurrentPage(3)}>Next</button>
           </div>
         );
       case 3:
@@ -202,7 +202,7 @@ const TestResult = () => {
               <img src={personalityImage1} alt="Personality type illustration" />
             </div>
             <p className="description">{resultCategories.traditionalEntrepreneurial > 50 ? detailedDescriptions.traditionalEntrepreneurial.Traditional : detailedDescriptions.traditionalEntrepreneurial.Entrepreneurial}</p>
-            <button onClick={() => setCurrentPage(4)}>Next</button>
+            <button  className="resultButton" onClick={() => setCurrentPage(4)}>Next</button>
           </div>
         );
       case 4:
@@ -219,7 +219,7 @@ const TestResult = () => {
               <img src={personalityImage1} alt="Personality type illustration" />
             </div>
             <p className="description">{resultCategories.saverAdHoc > 50 ? detailedDescriptions.saverAdHoc.Saver : detailedDescriptions.saverAdHoc.AdHoc}</p>
-            <button onClick={() => setCurrentPage(0)}>Back to Summary</button>
+            <button  className="resultButton" onClick={() => setCurrentPage(0)}>Back to Summary</button>
           </div>
         );
       default:

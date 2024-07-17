@@ -60,7 +60,7 @@ body {
   height: auto;
 }
 
-button {
+.resultButton {
   margin-top: 20px;
   background-color: #047bca;
   color: white;
@@ -72,11 +72,11 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.resultButton:hover {
   background-color: #035a91;
 }
 
-button:disabled {
+.resultButton:disabled {
   background-color: #ffffff;
   cursor: not-allowed;
 }
@@ -106,7 +106,7 @@ button:disabled {
     font-size: 1.2em;
   }
 
-  button {
+  .resultButton {
     padding: 10px 20px;
     font-size: 1.2em;
   }
