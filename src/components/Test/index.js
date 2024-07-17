@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
 
-
 const questions = [
+  // Frugal Impulsive
   {
     question: "When shopping for non-essential items, how do you decide on a purchase?",
     options: [
@@ -11,7 +11,7 @@ const questions = [
       "I sometimes plan but often decide on the spot",
       "I often make spontaneous purchases without much thought",
       "I usually buy on impulse if something catches my eye"
-    ],
+    ]
   },
   {
     question: "How often do you regret your purchases?",
@@ -20,7 +20,7 @@ const questions = [
       "Occasionally",
       "Frequently",
       "Almost Always"
-    ],
+    ]
   },
   {
     question: "How do you handle unexpected expenses?",
@@ -29,7 +29,7 @@ const questions = [
       "I sometimes use savings, sometimes use credit",
       "I often rely on credit or loans",
       "I handle it reactively with no plans"
-    ],
+    ]
   },
   {
     question: "How do you feel about paying full price for items?",
@@ -38,7 +38,7 @@ const questions = [
       "I sometimes pay full price if it's necessary",
       "Why wait for a discount?",
       "I want it, I got it"
-    ],
+    ]
   },
   {
     question: "How often do you review your spending habits?",
@@ -47,7 +47,7 @@ const questions = [
       "Occasionally",
       "Rarely",
       "Never"
-    ],
+    ]
   },
   {
     question: "How do you prioritise your expenses?",
@@ -55,7 +55,7 @@ const questions = [
       "Needs and Save over Wants",
       "Balancing between needs and wants",
       "Wants over needs"
-    ],
+    ]
   },
   {
     question: "How do you spend your salary?",
@@ -64,7 +64,7 @@ const questions = [
       "Save most of it, spend the rest",
       "Spend most of it, save the rest",
       "Who needs saving?"
-    ],
+    ]
   },
   {
     question: "How do you feel about impulse buying?",
@@ -73,7 +73,7 @@ const questions = [
       "I sometimes indulge but I try to limit it",
       "I frequently make impulse purchases",
       "I love the dopamine it gives me"
-    ],
+    ]
   },
   {
     question: "How do you typically respond to sales and promotions?",
@@ -82,7 +82,7 @@ const questions = [
       "I check them out but only buy what I need",
       "I often buy items on sale even if I don't need them",
       "I can't resist a good deal and buy spontaneously"
-    ],
+    ]
   },
   {
     question: "How often do you create a budget for your expenses?",
@@ -91,8 +91,9 @@ const questions = [
       "Always",
       "Never",
       "Sometimes"
-    ],
+    ]
   },
+  // Conservative Aggressive
   {
     question: "When you think about money, what comes to mind first?",
     options: [
@@ -100,7 +101,7 @@ const questions = [
       "Playing it safe, but I'm open to some growth",
       "Calculated risks, higher returns",
       "I'm going all in!"
-    ],
+    ]
   },
   {
     question: "How do handle news that may predict a loss for your portfolio?",
@@ -109,16 +110,16 @@ const questions = [
       "Rebalance the portfolio to minimise the risk",
       "Hold steady and buy a bit more",
       "Dive in and buy more cause prices are low"
-    ],
+    ]
   },
   {
     question: "Your friend just earned $100,000 from investing in a new cryptocurrency. What do you do?",
     options: [
       "I'm not jumping in",
-      "Lets me watch it out for a bit before investing",
+      "Let me watch it out for a bit before investing",
       "Maybe I should put a bit in",
-      "Lets goooo! All innnn!"
-    ],
+      "Let's goooo! All innnn!"
+    ]
   },
   {
     question: "Which of these quotes resonates with you the most?",
@@ -127,7 +128,7 @@ const questions = [
       "\"Look before you leap.\"",
       "\"No risk, no gain.\"",
       "\"Go big or go home!\""
-    ],
+    ]
   },
   {
     question: "High-yield savings is enough?",
@@ -136,7 +137,7 @@ const questions = [
       "Good but I do like a bit of investing",
       "I'd mix it with riskier options",
       "Boring! High returns please!!!"
-    ],
+    ]
   },
   {
     question: "Your ideal investment timeframe is:",
@@ -145,7 +146,7 @@ const questions = [
       "Several years, steady growth",
       "A few years, let's see some returns",
       "As quickly as possible, let's cash in!"
-    ],
+    ]
   },
   {
     question: "\"High Risk, High Rewards\"?",
@@ -154,7 +155,7 @@ const questions = [
       "Maybe but be careful",
       "Let's explore my options",
       "Bring it on!"
-    ],
+    ]
   },
   {
     question: "You're given $10,000 to invest. What do you do?",
@@ -163,7 +164,7 @@ const questions = [
       "Keep it in my saving accounts for now",
       "Half safe, half risky",
       "Free money anyway so high risk all the way"
-    ],
+    ]
   },
   {
     question: "Do you ever check your investment portfolio?",
@@ -172,7 +173,7 @@ const questions = [
       "Every few months",
       "Monthly",
       "Daily"
-    ],
+    ]
   },
   {
     question: "How do you prefer earning your money?",
@@ -181,16 +182,17 @@ const questions = [
       "A stable job and side gigs",
       "Freelancing",
       "Running my own business"
-    ],
+    ]
   },
+  // Traditional Entrepreneurial  
   {
     question: "How do you feel about job security?",
     options: [
       "I need a stable job to be able to sleep at night!",
       "Important, but I don't mind a bit of uncertainty",
-      "Some security is for sure nice, but I want to try out new opportunity",
+      "Some security is for sure nice, but I want to try out new opportunities",
       "I want flexibility"
-    ],
+    ]
   },
   {
     question: "How would you describe your source of income?",
@@ -199,7 +201,7 @@ const questions = [
       "I have a job and do a bit of side hustle",
       "Multiple part-time jobs",
       "I run my own business"
-    ],
+    ]
   },
   {
     question: "Will you want to run your own business?",
@@ -208,7 +210,7 @@ const questions = [
       "Not now I would say",
       "Yeah, I'm planning to in the future",
       "I'm running one"
-    ],
+    ]
   },
   {
     question: "What would you be most comfortable with?",
@@ -217,7 +219,7 @@ const questions = [
       "A full-time job and some freelance work",
       "Mostly freelance work",
       "Full-time freelancing or running my own business"
-    ],
+    ]
   },
   {
     question: "Will you do job-hopping for better income?",
@@ -225,7 +227,7 @@ const questions = [
       "Probably not",
       "Maybe if the offer is good",
       "For sure"
-    ],
+    ]
   },
   {
     question: "Which of these options do you relate to the most?",
@@ -234,14 +236,14 @@ const questions = [
       "Don't put all your eggs in one basket",
       "God favors the bold",
       "No guts, no glory"
-    ],
+    ]
   },
   {
     question: "Pick one option",
     options: [
       "Climbing the ladder is the way to go",
       "Be my own boss"
-    ],
+    ]
   },
   {
     question: "What is your preferred income variability?",
@@ -250,7 +252,7 @@ const questions = [
       "Some variability but prefer stability",
       "More variability, more opportunity",
       "More variability, more earning"
-    ],
+    ]
   },
   {
     question: "How do you typically find new work opportunities?",
@@ -259,7 +261,7 @@ const questions = [
       "Networking",
       "Actively seeking and applying for jobs",
       "Create new business and ventures"
-    ],
+    ]
   },
   {
     question: "How do you save?",
@@ -268,8 +270,9 @@ const questions = [
       "I save regularly but sometimes miss a few months",
       "I save when I have extra money",
       "Whatever is left after my spending"
-    ],
+    ]
   },
+  // Saver Ad-hoc 
   {
     question: "When you receive your paycheck, what is your first thought?",
     options: [
@@ -277,7 +280,7 @@ const questions = [
       "Pay all my bills and then save",
       "Spend first, and save what's left",
       "Spend it all"
-    ],
+    ]
   },
   {
     question: "Do you have an emergency fund?",
@@ -285,7 +288,7 @@ const questions = [
       "Yes",
       "No",
       "You only live once so why bother?"
-    ],
+    ]
   },
   {
     question: "Do you budget?",
@@ -294,7 +297,7 @@ const questions = [
       "Most of the time",
       "I occasionally do it but rarely follow it",
       "Too restrictive for me"
-    ],
+    ]
   },
   {
     question: "What is your saving goal?",
@@ -303,7 +306,7 @@ const questions = [
       "Saving enough for major purchases like a house down payment",
       "Saving for immediate needs and short-term goals",
       "Putting money aside whenever I can"
-    ],
+    ]
   },
   {
     question: "Are you happy with your savings now?",
@@ -312,7 +315,7 @@ const questions = [
       "I'm comfortable",
       "Not really",
       "No"
-    ],
+    ]
   },
   {
     question: "You make an extra $200 this week:",
@@ -321,14 +324,14 @@ const questions = [
       "Save most of it but have some fun",
       "Spend most of it",
       "It's free money"
-    ],
+    ]
   },
   {
     question: "Will you be able to survive for 3 months just on your savings?",
     options: [
       "Yes",
       "No"
-    ],
+    ]
   },
   {
     question: "Would you consider yourself a good saver?",
@@ -336,112 +339,130 @@ const questions = [
       "Yes",
       "Maybe",
       "No"
-    ],
-  },
+    ]
+  }
 ];
 
 const Test = () => {
-    const [currentPage, setCurrentPage] = useState(0);
-    const [answers, setAnswers] = useState(Array(questions.length).fill(null));
-    const navigate = useNavigate();
-  
-    const handleOptionChange = (questionIndex, optionIndex) => {
-      const newAnswers = [...answers];
-      newAnswers[questionIndex] = optionIndex;
-      setAnswers(newAnswers);
-  
-      // Automatically go to the next page
-      if (questionIndex < questions.length - 1) {
-        setTimeout(() => {
-          setCurrentPage(currentPage + 1);
-        }, 0); // Add a slight delay for better UX
-      } else if (questionIndex === questions.length - 1) {
-        calculateResult(newAnswers);
-      }
-    };
-  
-    const handleNextPage = () => {
-      if (currentPage < questions.length - 1 && answers[currentPage] !== null) {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const navigate = useNavigate();
+
+  const handleOptionChange = (questionIndex, optionIndex) => {
+    const newAnswers = [...answers];
+    newAnswers[questionIndex] = optionIndex;
+    setAnswers(newAnswers);
+
+    // Automatically go to the next page
+    if (questionIndex < questions.length - 1) {
+      setTimeout(() => {
         setCurrentPage(currentPage + 1);
-      }
+      }, 0); // Add a slight delay for better UX
+    } else if (questionIndex === questions.length - 1) {
+      calculateResult(newAnswers);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < questions.length - 1 && answers[currentPage] !== null) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const calculateResult = (answers) => {
+    const resultCategories = {
+      frugalImpulsive: 0,
+      conservativeAggressive: 0,
+      traditionalEntrepreneurial: 0,
+      saverAdHoc: 0,
     };
-  
-    const handlePrevPage = () => {
-      if (currentPage > 0) {
-        setCurrentPage(currentPage - 1);
-      }
+
+    const categoryLengths = {
+      frugalImpulsive: 10,
+      conservativeAggressive: 10,
+      traditionalEntrepreneurial: 10,
+      saverAdHoc: 10,
     };
-  
-    const calculateResult = (answers) => {
-      // Assuming the first option is the best (100%) and the last option is the worst (0%)
-      const totalQuestions = questions.length;
-      let score = 0;
-  
-      answers.forEach((answer, index) => {
-        const optionsCount = questions[index].options.length;
-        const weight = (optionsCount - answer - 1) / (optionsCount - 1); // Calculate weight based on the answer position
-        score += weight * 100; // Convert to percentage
-      });
-  
-      score = score / totalQuestions; // Average score
-  
-      navigate('/testresult', { state: { score } }); // Navigate to result page with score
-    };
-  
-    const renderQuestions = () => {
-      return questions.map((q, index) => (
-        <div
-          key={index}
-          className={`question-block ${index === currentPage ? 'active' : 'hidden'}`}
-        >
-          <h2>{q.question}</h2>
-          <div className="options">
-            {q.options.map((option, optionIndex) => (
-              <div 
-                key={optionIndex} 
-                className={`option ${answers[index] === optionIndex ? 'selected' : ''}`}
-                onClick={() => handleOptionChange(index, optionIndex)}
-              >
-                {option}
-              </div>
-            ))}
-          </div>
-        </div>
-      ));
-    };
-  
-    return (
-      <div className="test-page">
-        <div className="test-container">
-        <div className="progress-bar">
-            <div
-              className="progress-bar-fill"
-              style={{ width: `${((currentPage + 1) / questions.length) * 100}%` }}
-            ></div>
-            <span className="progress-bar-text">
-              {Math.round(((currentPage + 1) / questions.length) * 100)}%
-            </span>
-          </div>
-          <button 
-            className="nav-arrow left" 
-            onClick={handlePrevPage} 
-            disabled={currentPage === 0}
-          >
-            &#8592;
-          </button>
-          <div className="question-section">
-            {renderQuestions()}
-          </div>
-          <button 
-            className="nav-arrow right" 
-            onClick={handleNextPage} 
-            disabled={currentPage >= questions.length - 1 || answers[currentPage] === null}
-          >
-            &#8594;
-          </button>
+
+    answers.forEach((answer, index) => {
+      let category;
+      if (index < 10) category = "frugalImpulsive";
+      else if (index < 20) category = "conservativeAggressive";
+      else if (index < 30) category = "traditionalEntrepreneurial";
+      else category = "saverAdHoc";
+
+      const optionsCount = questions[index].options.length;
+      const weight = (optionsCount - answer - 1) / (optionsCount - 1); // Calculate weight based on the answer position
+      resultCategories[category] += weight * 100; // Convert to percentage
+    });
+
+    Object.keys(resultCategories).forEach((category) => {
+      resultCategories[category] = resultCategories[category] / categoryLengths[category]; // Average score
+    });
+
+    navigate('/testresult', { state: { resultCategories } }); // Navigate to result page with scores
+  };
+
+  const renderQuestions = () => {
+    return questions.map((q, index) => (
+      <div
+        key={index}
+        className={`question-block ${index === currentPage ? 'active' : 'hidden'}`}
+      >
+        <h2>{q.question}</h2>
+        <div className="options">
+          {q.options.map((option, optionIndex) => (
+            <div 
+              key={optionIndex} 
+              className={`option ${answers[index] === optionIndex ? 'selected' : ''}`}
+              onClick={() => handleOptionChange(index, optionIndex)}
+            >
+              {option}
+            </div>
+          ))}
         </div>
       </div>
-    );
+    ));
   };
-  
-  export default Test;
+
+  return (
+    <div className="test-page">
+      <div className="test-container">
+        <div className="progress-bar">
+          <div
+            className="progress-bar-fill"
+            style={{ width: `${((currentPage + 1) / questions.length) * 100}%` }}
+          ></div>
+          <span className="progress-bar-text">
+            {Math.round(((currentPage + 1) / questions.length) * 100)}%
+          </span>
+        </div>
+        <button 
+          className="nav-arrow left" 
+          onClick={handlePrevPage} 
+          disabled={currentPage === 0}
+        >
+          &#8592;
+        </button>
+        <div className="question-section">
+          {renderQuestions()}
+        </div>
+        <button 
+          className="nav-arrow right" 
+          onClick={handleNextPage} 
+          disabled={currentPage >= questions.length - 1 || answers[currentPage] === null}
+        >
+          &#8594;
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Test;
