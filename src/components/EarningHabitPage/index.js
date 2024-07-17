@@ -20,9 +20,9 @@ const EarningHabitPage = ({ resultCategories, currentPage, setCurrentPage, detai
         <div className="earning-text-container">
           <SliderComponent
             label={isTraditional ? "Traditional" : "Entrepreneurial"}
-            score={isTraditional ?  resultCategories.traditionalEntrepreneurial : 100 - resultCategories.traditionalEntrepreneurial}
-            leftLabel="Traditional"
-            rightLabel="Entrepreneurial"
+            score={isTraditional ? resultCategories.traditionalEntrepreneurial : 100 - resultCategories.traditionalEntrepreneurial}
+            leftLabel="Entrepreneurial"
+            rightLabel="Traditional"
           />
           <p className="description">{isTraditional ? detailedDescriptions.traditionalEntrepreneurial.Traditional : detailedDescriptions.traditionalEntrepreneurial.Entrepreneurial}</p>
         </div>
