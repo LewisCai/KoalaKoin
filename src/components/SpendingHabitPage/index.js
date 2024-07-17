@@ -4,7 +4,7 @@ import FrugalImage from "../../assets/images/Frugal.jpg";
 import ImpulsiveImage from "../../assets/images/Impulsive.jpg";
 import "./index.scss";
 
-const SpendingHabitPage = ({ resultCategories, setCurrentPage, detailedDescriptions }) => {
+const SpendingHabitPage = ({ resultCategories, currentPage, setCurrentPage, detailedDescriptions }) => {
   const isFrugal = resultCategories.frugalImpulsive > 50;
 
   return (
@@ -20,13 +20,21 @@ const SpendingHabitPage = ({ resultCategories, setCurrentPage, detailedDescripti
         <div className="spending-text-container">
           <SliderComponent
             label={isFrugal ? "Frugal" : "Impulsive"}
-            score={isFrugal ? resultCategories.frugalImpulsive : 100-resultCategories.frugalImpulsive}
+            score={isFrugal ? resultCategories.frugalImpulsive : 100 - resultCategories.frugalImpulsive}
             leftLabel="Frugal"
             rightLabel="Impulsive"
           />
           <p className="description">{isFrugal ? detailedDescriptions.frugalImpulsive.Frugal : detailedDescriptions.frugalImpulsive.Impulsive}</p>
-          <button className="resultButton" onClick={() => setCurrentPage(2)}>Next</button>
         </div>
+      </div>
+      <div className="pagination-container">
+        <button className="pagination-button" onClick={() => setCurrentPage(currentPage - 1)}>Go Back</button>
+        <div className="page-indicators">
+          {Array.from({ length: 5 }, (_, index) => (
+            <div key={index} className={`page-indicator ${index === currentPage ? 'active' : ''}`} />
+          ))}
+        </div>
+        <button className="pagination-button" onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
       </div>
     </div>
   );

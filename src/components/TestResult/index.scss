@@ -36,7 +36,7 @@ body {
   background-size: cover;
 }
 
-.test-result{
+.test-result, .detailed-results, .result-category {
   background: #fff;
   padding: 40px;
   border-radius: 10px;
@@ -81,6 +81,49 @@ body {
   cursor: not-allowed;
 }
 
+/* Pagination Styles */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.pagination-button {
+  background: none;
+  border: none;
+  color: #047bca;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: color 0.3s;
+  outline: none;
+}
+
+.pagination-button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.page-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-indicator {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: #ccc;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.page-indicator.active {
+  background: #047bca;
+}
+
 /* Media query for smaller screens */
 @media (max-width: 600px) {
   .testresult-page {
@@ -110,4 +153,25 @@ body {
     padding: 10px 20px;
     font-size: 1.2em;
   }
+
+  .pagination-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pagination-button {
+    margin: 10px 0;
+  }
+
+  .page-indicators {
+    margin: 10px 0;
+  }
+
+  .page-indicator {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+  }
+
+  
 }

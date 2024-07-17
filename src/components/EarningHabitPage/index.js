@@ -4,7 +4,7 @@ import TraditionalImage from "../../assets/images/Traditional.jpg";
 import EntrepreneurialImage from "../../assets/images/Entrepreneurial.jpg";
 import "./index.scss";
 
-const EarningHabitPage = ({ resultCategories, setCurrentPage, detailedDescriptions }) => {
+const EarningHabitPage = ({ resultCategories, currentPage, setCurrentPage, detailedDescriptions }) => {
   const isTraditional = resultCategories.traditionalEntrepreneurial > 50;
 
   return (
@@ -20,14 +20,22 @@ const EarningHabitPage = ({ resultCategories, setCurrentPage, detailedDescriptio
         <div className="earning-text-container">
           <SliderComponent
             label={isTraditional ? "Traditional" : "Entrepreneurial"}
-            score={isTraditional ? resultCategories.traditionalEntrepreneurial : 100-resultCategories.traditionalEntrepreneurial}
+            score={isTraditional ? resultCategories.traditionalEntrepreneurial : 100 - resultCategories.traditionalEntrepreneurial}
             leftLabel="Traditional"
             rightLabel="Entrepreneurial"
           />
           <p className="description">{isTraditional ? detailedDescriptions.traditionalEntrepreneurial.Traditional : detailedDescriptions.traditionalEntrepreneurial.Entrepreneurial}</p>
         </div>
       </div>
-      <button className="earning-button" onClick={() => setCurrentPage(4)}>Next</button>
+      <div className="pagination-container">
+        <button className="pagination-button" onClick={() => setCurrentPage(currentPage - 1)}>Go Back</button>
+        <div className="page-indicators">
+          {Array.from({ length: 5 }, (_, index) => (
+            <div key={index} className={`page-indicator ${index === currentPage ? 'active' : ''}`} />
+          ))}
+        </div>
+        <button className="pagination-button" onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+      </div>
     </div>
   );
 };

@@ -3,10 +3,10 @@ import { useLocation } from "react-router-dom";
 import { useTestResult } from '../../TestResultContext'; // Correct relative path
 import personalityImage1 from "../../assets/images/personality1.png";
 import "./index.scss";
+import SpendingHabitPage from "../SpendingHabitPage";
 import EarningHabitPage from "../EarningHabitPage";
 import InvestingHabitPage from "../InvestingHabitPage";
 import SavingHabitPage from "../SavingHabitPage";
-import SpendingHabitPage from "../SpendingHabitPage";
 
 const TestResult = () => {
   const location = useLocation();
@@ -158,13 +158,41 @@ const TestResult = () => {
           </div>
         );
       case 1:
-        return <SpendingHabitPage resultCategories={resultCategories} setCurrentPage={setCurrentPage} detailedDescriptions={detailedDescriptions} />;
+        return (
+          <SpendingHabitPage 
+            resultCategories={resultCategories} 
+            currentPage={currentPage} 
+            setCurrentPage={setCurrentPage} 
+            detailedDescriptions={detailedDescriptions} 
+          />
+        );
       case 2:
-        return <InvestingHabitPage resultCategories={resultCategories} setCurrentPage={setCurrentPage} detailedDescriptions={detailedDescriptions} />;
+        return (
+          <InvestingHabitPage 
+            resultCategories={resultCategories} 
+            currentPage={currentPage} 
+            setCurrentPage={setCurrentPage} 
+            detailedDescriptions={detailedDescriptions} 
+          />
+        );
       case 3:
-        return <EarningHabitPage resultCategories={resultCategories} setCurrentPage={setCurrentPage} detailedDescriptions={detailedDescriptions} />;
+        return (
+          <EarningHabitPage 
+            resultCategories={resultCategories} 
+            currentPage={currentPage} 
+            setCurrentPage={setCurrentPage} 
+            detailedDescriptions={detailedDescriptions} 
+          />
+        );
       case 4:
-        return <SavingHabitPage resultCategories={resultCategories} setCurrentPage={setCurrentPage} detailedDescriptions={detailedDescriptions} />;
+        return (
+          <SavingHabitPage 
+            resultCategories={resultCategories} 
+            currentPage={currentPage} 
+            setCurrentPage={setCurrentPage} 
+            detailedDescriptions={detailedDescriptions} 
+          />
+        );
       default:
         return null;
     }
