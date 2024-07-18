@@ -11,15 +11,34 @@
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s forwards;
-  }
+    background-image: url('../../assets/images/resultBackground.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
   
-  .personality-title {
+  .personality-title1{
     text-align: center;
     margin-bottom: 2vh;
     font-size: 2vh;
     font-weight: bold;
+    color: #000000;
   }
 
+  .personality-title2 {
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 2vh;
+    font-weight: bold;
+    color: #57b9fa;
+  }
+  .personality-title3 {
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #000000;
+  }
   .personality-description {
     text-align: center;
     margin-bottom: 2vh;
@@ -38,7 +57,7 @@
   }
   
   .personality-image-container img {
-    max-width: 200px;
+    max-width: 400px;
     align-self: center;
     height: auto;
     border-radius: 1vh;
@@ -112,6 +131,13 @@
     .personality-image-container {
       margin-bottom: 2vh;
     }
+
+    .personality-image-container img {
+        max-width: 200px;
+        align-self: center;
+        height: auto;
+        border-radius: 1vh;
+      }
   
     .personality-text-container {
       text-align: center;
