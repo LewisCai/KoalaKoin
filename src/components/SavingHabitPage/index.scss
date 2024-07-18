@@ -12,7 +12,7 @@
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s forwards;
-    background-image: url('../../assets/images/resultBackground6.png');
+    background-image: url('../../assets/images/resultBackground7.png');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -116,6 +116,10 @@
     .saving-result-category {
       padding: 20px;
       max-height: 90vh;
+      background-image: url('../../assets/images/resultBackground6.png');
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat; 
     }
   
     .saving-title {
