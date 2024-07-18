@@ -11,6 +11,10 @@
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s forwards;
+    background-image: url('../../assets/images/resultBackground4.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
   }
   
   .investing-title {

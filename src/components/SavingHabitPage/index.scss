@@ -6,11 +6,16 @@
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
     max-width: 1200px;
     width: 100%;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s forwards;
+    background-image: url('../../assets/images/resultBackground6.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
   }
   
   .saving-title {
