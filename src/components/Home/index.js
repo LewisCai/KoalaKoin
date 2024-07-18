@@ -72,9 +72,9 @@ const Home = () => {
                 <a href="#">Join Us!</a>
             </div>
             <div class="footer-social-icons">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=61563041034763" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/koala_koin" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+              <a href="https://x.com/koala_koin" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
         </div>
             </div>
         </div>
