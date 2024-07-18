@@ -75,6 +75,8 @@
     outline: none;
     padding: 10px 20px;
     border-radius: 10px;
+    border: 2px solid #ffffff;
+
   }
   
   .earning-pagination-button:disabled {
@@ -147,6 +149,7 @@
   
     .earning-pagination-button {
       margin: 10px 0;
+      border: 2px solid #ffffff;
     }
   
     .earning-page-indicators {

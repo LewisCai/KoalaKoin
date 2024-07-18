@@ -74,6 +74,7 @@
     outline: none;
     padding: 10px 20px;
     border-radius: 10px;
+    border: 2px solid #ffffff;
   }
   
   .spending-pagination-button:disabled {
@@ -138,6 +139,8 @@
     }
   
     .spending-pagination-button {
+        border: 2px solid #ffffff;
+
       margin: 10px 0;
     }
   

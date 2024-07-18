@@ -87,12 +87,16 @@
     outline: none;
     padding: 10px 20px;
     border-radius: 10px;
+    border: 2px solid #ffffff;
+
   }
   
   .personality-pagination-button:disabled {
     color: #ffffff00;
     cursor: not-allowed;
     background-color: #ffffff00;
+    border: 2px solid #00000000;
+
   }
   
   .personality-page-indicators {
@@ -105,7 +109,7 @@
     width: 1vh;
     height: 1vh;
     margin: 0 0.5vh;
-    background: #b9b9b9;
+    background: #ffffff;
     border-radius: 50%;
     transition: background 0.3s;
   }
@@ -149,6 +153,8 @@
     }
   
     .personality-pagination-button {
+    border: 2px solid #ffffff;
+
       margin: 1vh 0;
     }
   

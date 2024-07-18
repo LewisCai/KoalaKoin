@@ -76,6 +76,8 @@
     outline: none;
     padding: 10px 20px;
     border-radius: 10px;
+    border: 2px solid #ffffff;
+
   }
   
   .saving-pagination-button:disabled {
@@ -147,6 +149,7 @@
     }
   
     .saving-pagination-button {
+      border: 2px solid #ffffff;
       margin: 10px 0;
     }
   
