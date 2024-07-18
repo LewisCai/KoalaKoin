@@ -44,12 +44,12 @@ const PersonalityPage = ({ personality, currentPage, setCurrentPage }) => {
   return (
     <div className="personality-result-category">
       <p className="personality-title">Your personality type is:</p>
+      <p className="personality-title">{personality.key}</p>
       <div className="personality-image-container">
         <img src={personalityImage} alt="Personality type illustration" />
       </div>
       <div className="personality-text-container">
-        <p className="title">{personality.key}</p>
-        <p className="personality-description">{personality.name}</p>
+        <p className="personality-title">{personality.name}</p>
         <div className="result-section">
           <p className="personality-description">{personality.description}</p>
         </div>
