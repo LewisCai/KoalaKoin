@@ -15,8 +15,7 @@ body {
 
 .title {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   font-size: 2.5em;
   font-weight: bold;
 }
@@ -36,142 +35,10 @@ body {
   background-size: cover;
 }
 
-.test-result, .detailed-results, .result-category {
-  background: #fff;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 700px;
-  width: 100%;
-  transition: all 0.5s ease;
-}
-
-.scores, .result-category {
-  margin-bottom: 20px;
-}
-
-.image-container {
-  margin: 20px 0;
-}
-
-.image-container img {
-  max-width: 70%;
-  height: auto;
-}
-
-.resultButton {
-  margin-top: 20px;
-  background-color: #047bca;
-  color: white;
-  padding: 20px 35px;
-  border: none;
-  border-radius: 5px;
-  font-size: 2em;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.resultButton:hover {
-  background-color: #035a91;
-}
-
-.resultButton:disabled {
-  background-color: #ffffff;
-  cursor: not-allowed;
-}
-
-/* Pagination Styles */
-.pagination-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  width: 100%;
-}
-
-.pagination-button {
-  background: none;
-  border: none;
-  color: #047bca;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: color 0.3s;
-  outline: none;
-}
-
-.pagination-button:disabled {
-  color: #ccc;
-  cursor: not-allowed;
-}
-
-.page-indicators {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.page-indicator {
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  background: #ccc;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.page-indicator.active {
-  background: #047bca;
-}
-
 /* Media query for smaller screens */
 @media (max-width: 600px) {
   .testresult-page {
     padding: 10px;
   }
 
-  .test-result, .detailed-results, .result-category {
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 90%;
-    transition: all 0.5s ease;
-  }
-  .title {
-    font-size: 1.8em;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  .description {
-    font-size: 1.2em;
-  }
-
-  .resultButton {
-    padding: 10px 20px;
-    font-size: 1.2em;
-  }
-
-  .pagination-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pagination-button {
-    margin: 10px 0;
-  }
-
-  .page-indicators {
-    margin: 10px 0;
-  }
-
-  .page-indicator {
-    width: 8px;
-    height: 8px;
-    margin: 0 3px;
-  }
-
-  
 }

@@ -1,12 +1,13 @@
+// TestResult.js
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useTestResult } from '../../TestResultContext'; // Correct relative path
-import personalityImage1 from "../../assets/images/personality1.png";
 import "./index.scss";
 import SpendingHabitPage from "../SpendingHabitPage";
 import EarningHabitPage from "../EarningHabitPage";
 import InvestingHabitPage from "../InvestingHabitPage";
 import SavingHabitPage from "../SavingHabitPage";
+import PersonalityPage from "../PersonalityPage"; // Import PersonalityPage
 
 const TestResult = () => {
   const location = useLocation();
@@ -143,19 +144,11 @@ const TestResult = () => {
     switch (currentPage) {
       case 0:
         return (
-          <div className="test-result">
-            <p className="title">Your personality type is:</p>
-            <p className="title">{personality.key}</p>
-            <p className="description">{personality.name}</p>
-            <div className="result-section">
-              <p className="title">Description</p>
-              <p className="description">{personality.description}</p>
-            </div>
-            <div className="image-container">
-              <img src={personalityImage1} alt="Personality type illustration" />
-            </div>
-            <button className="resultButton" onClick={() => setCurrentPage(1)}>Next</button>
-          </div>
+          <PersonalityPage 
+            personality={personality} 
+            currentPage={currentPage} 
+            setCurrentPage={setCurrentPage} 
+          />
         );
       case 1:
         return (
