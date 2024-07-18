@@ -16,14 +16,14 @@ const PersonalityPage = ({ personality, currentPage, setCurrentPage }) => {
           <p className="description">{personality.description}</p>
         </div>
       </div>
-      <div className="pagination-container">
-        <button className="pagination-button" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 0}>Go Back</button>
-        <div className="page-indicators">
+      <div className="personality-pagination-container">
+        <button className="personality-pagination-button" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 0}>Go Back</button>
+        <div className="personality-page-indicators">
           {Array.from({ length: 5 }, (_, index) => (
-            <div key={index} className={`page-indicator ${index === currentPage ? 'active' : ''}`} />
+            <div key={index} className={`personality-page-indicator ${index === currentPage ? 'active' : ''}`} />
           ))}
         </div>
-        <button className="pagination-button" onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+        <button className="personality-pagination-button" onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
       </div>
     </div>
   );
