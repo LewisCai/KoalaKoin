@@ -34,6 +34,7 @@ const SavingHabitPage = ({ resultCategories, currentPage, setCurrentPage, detail
             leftLabel="Saver"
             rightLabel="Ad-Hoc"
             fromLeft={isSaver}
+            color={"#eb3131"}
           />
           <p className="description">{isSaver ? detailedDescriptions.saverAdHoc.Saver : detailedDescriptions.saverAdHoc.AdHoc}</p>
         </div>

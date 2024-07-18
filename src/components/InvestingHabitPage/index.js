@@ -34,6 +34,7 @@ const InvestingHabitPage = ({ resultCategories, currentPage, setCurrentPage, det
             leftLabel="Conservative"
             rightLabel="Aggressive"
             fromLeft={isConservative}
+            color={"#20d138"}
           />
           <p className="description">{isConservative ? detailedDescriptions.conservativeAggressive.Conservative : detailedDescriptions.conservativeAggressive.Aggressive}</p>
         </div>

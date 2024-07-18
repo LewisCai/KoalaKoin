@@ -49,9 +49,9 @@ const PersonalityPage = ({ personality, currentPage, setCurrentPage }) => {
       </div>
       <div className="personality-text-container">
         <p className="title">{personality.key}</p>
-        <p className="description">{personality.name}</p>
+        <p className="personality-description">{personality.name}</p>
         <div className="result-section">
-          <p className="description">{personality.description}</p>
+          <p className="personality-description">{personality.description}</p>
         </div>
       </div>
       <div className="personality-pagination-container">

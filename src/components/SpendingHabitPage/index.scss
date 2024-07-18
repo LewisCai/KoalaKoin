@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #ffffff;
+    background: #fff0de;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -15,7 +15,6 @@
   
   .spending-title {
     text-align: center;
-    margin-top: 20px;
     margin-bottom: 20px;
     font-size: 2.5em;
     font-weight: bold;
@@ -63,7 +62,7 @@
   }
   
   .spending-pagination-button {
-    background: #047bca;
+    background: #ffa41c;
     border: none;
     color: #ffffff;
     font-size: 1.2em;
@@ -75,7 +74,7 @@
   }
   
   .spending-pagination-button:disabled {
-    color: #ccc;
+    color: #ffffff;
     cursor: not-allowed;
   }
   
@@ -89,13 +88,13 @@
     width: 10px;
     height: 10px;
     margin: 0 5px;
-    background: #ccc;
+    background: #ffffff;
     border-radius: 50%;
     transition: background 0.3s;
   }
   
   .spending-page-indicator.active {
-    background: #047bca;
+    background: #ffa41c;
   }
   
   /* Media query for smaller screens */

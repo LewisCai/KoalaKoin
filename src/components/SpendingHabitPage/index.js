@@ -34,6 +34,7 @@ const SpendingHabitPage = ({ resultCategories, currentPage, setCurrentPage, deta
             leftLabel="Frugal"
             rightLabel="Impulsive"
             fromLeft={isFrugal}
+            color={"#ffa41c"}
           />
           <p className="description">{isFrugal ? detailedDescriptions.frugalImpulsive.Frugal : detailedDescriptions.frugalImpulsive.Impulsive}</p>
         </div>

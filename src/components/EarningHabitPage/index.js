@@ -34,6 +34,7 @@ const EarningHabitPage = ({ resultCategories, currentPage, setCurrentPage, detai
             leftLabel="Traditional"
             rightLabel="Entrepreneurial"
             fromLeft={isTraditional}
+            color={"#c937d6"}
           />
           <p className="description">{isTraditional ? detailedDescriptions.traditionalEntrepreneurial.Traditional : detailedDescriptions.traditionalEntrepreneurial.Entrepreneurial}</p>
         </div>
