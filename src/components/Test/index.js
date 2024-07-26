@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './index.scss';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios for HTTP requests
+import { useAuth0 } from '@auth0/auth0-react';
+
 
 const questions = [
   // Frugal Impulsive
@@ -346,6 +349,7 @@ const questions = [
 const Test = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const { user } = useAuth0();
   const navigate = useNavigate();
 
   const handleOptionChange = (questionIndex, optionIndex) => {
@@ -375,7 +379,7 @@ const Test = () => {
     }
   };
 
-  const calculateResult = (answers) => {
+  const calculateResult = async (answers) => {
     const resultCategories = {
       frugalImpulsive: 0,
       conservativeAggressive: 0,
@@ -406,29 +410,15 @@ const Test = () => {
       resultCategories[category] = resultCategories[category] / categoryLengths[category]; // Average score
     });
 
-    navigate('/testresult', { state: { resultCategories } }); // Navigate to result page with scores
-  };
+    // Send the result to the backend
+    try {
+      await axios.post('/api/save-answers', { email: user.email, resultCategories, answers });
+      console.log('Answers saved successfully');
+    } catch (error) {
+      console.error('Error saving answers:', error);
+    }
 
-  const renderQuestions = () => {
-    return questions.map((q, index) => (
-      <div
-        key={index}
-        className={`question-block ${index === currentPage ? 'active' : 'hidden'}`}
-      >
-        <h2>{q.question}</h2>
-        <div className="options">
-          {q.options.map((option, optionIndex) => (
-            <div 
-              key={optionIndex} 
-              className={`option ${answers[index] === optionIndex ? 'selected' : ''}`}
-              onClick={() => handleOptionChange(index, optionIndex)}
-            >
-              {option}
-            </div>
-          ))}
-        </div>
-      </div>
-    ));
+    navigate('/testresult', { state: { resultCategories } }); // Navigate to result page with scores
   };
 
   return (
@@ -451,7 +441,25 @@ const Test = () => {
           &#8592;
         </button>
         <div className="question-section">
-          {renderQuestions()}
+          {questions.map((q, index) => (
+            <div
+              key={index}
+              className={`question-block ${index === currentPage ? 'active' : 'hidden'}`}
+            >
+              <h2>{q.question}</h2>
+              <div className="options">
+                {q.options.map((option, optionIndex) => (
+                  <div 
+                    key={optionIndex} 
+                    className={`option ${answers[index] === optionIndex ? 'selected' : ''}`}
+                    onClick={() => handleOptionChange(index, optionIndex)}
+                  >
+                    {option}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
         <button 
           className="nav-arrow right" 
