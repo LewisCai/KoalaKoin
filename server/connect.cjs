@@ -13,6 +13,7 @@ app.use(express.static(path.join(__dirname, '../build'))); // Serve static files
 
 async function main() {
   const Db = process.env.ATLAS_URI;
+  console.log('MongoDB URI:', Db); // Ensure this prints out the correct URI
   const client = new MongoClient(Db);
 
   try {
@@ -34,6 +35,7 @@ async function main() {
 
         // Validate the incoming data
         if (!email || !resultCategories || !answers) {
+          console.log('Invalid data:', { email, resultCategories, answers });
           return res.status(400).send('Invalid data');
         }
 
