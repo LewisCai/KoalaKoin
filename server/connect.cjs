@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-require('dotenv').config({ path: './config.env' });
+require('dotenv').config({ path: './server/config.env' });
 
 const app = express();
 const port = process.env.PORT || 3000;
