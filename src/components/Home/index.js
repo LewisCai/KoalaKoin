@@ -66,10 +66,10 @@ const Home = () => {
         <div class="footer-content">
             <p class="footer-copyright">©2024 KoalaKoins Limited</p>
             <div class="footer-links">
-                <a href="#">Contact</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Join Us!</a>
+                <a >Contact</a>
+                <a >Terms & Conditions</a>
+                <a >Privacy Policy</a>
+                <a>Join Us!</a>
             </div>
             <div class="footer-social-icons">
               <a href="https://www.facebook.com/profile.php?id=61563041034763" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
