@@ -1,5 +1,6 @@
-This is my personal portfolio website, that I build with JS and SCSS
+This is my start up, that I build with JS and SCSS
 
+www.koalakoin.org
 
 
 
