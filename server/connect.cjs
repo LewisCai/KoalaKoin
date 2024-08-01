@@ -13,7 +13,6 @@ app.use(express.static(path.join(__dirname, '../build'))); // Serve static files
 
 async function main() {
   const Db = process.env.ATLAS_URI;
-  console.log('MongoDB URI:', Db); // Ensure this prints out the correct URI
   const client = new MongoClient(Db);
 
   try {
@@ -144,6 +143,7 @@ async function main() {
         res.status(500).send('Internal server error');
       }
     });
+    
 
     app.get('/api/get-test-result', async (req, res) => {
       const { email } = req.query;

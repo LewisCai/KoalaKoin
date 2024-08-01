@@ -6,8 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-const domain = "your-auth0-domain";
-const clientId = "your-auth0-client-id";
+const domain = "dev-clvxuii7bvivprzz.us.auth0.com";
+const clientId = "VEDpjakOw052qZxAKjrbZ4GtpbYhBjGw";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

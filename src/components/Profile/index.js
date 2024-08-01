@@ -8,13 +8,20 @@ const Profile = () => {
 
   useEffect(() => {
     const fetchTestResult = async () => {
+      if (!user || !user.email) {
+        console.error('User or email is undefined.');
+        return;
+      }
+      
+      console.log('Fetching test result for:', user.email);
       try {
         const response = await fetch(`/api/get-test-result?email=${user.email}`);
         if (response.ok) {
           const data = await response.json();
+          console.log('Received data:', data);
           setTestResultData(data);
         } else {
-          console.error('Failed to fetch test result');
+          console.error('Failed to fetch test result:', response.status, response.statusText);
         }
       } catch (error) {
         console.error('Error fetching test result:', error);
@@ -24,11 +31,15 @@ const Profile = () => {
     if (isAuthenticated) {
       fetchTestResult();
     }
-  }, [isAuthenticated, user.email]);
+  }, [isAuthenticated, user]);
 
   if (isLoading) {
     return <div className="loading-container">Loading...</div>;
   }
+
+  console.log('Is authenticated:', isAuthenticated);
+  console.log('User:', user);
+  console.log('Test Result Data:', testResultData);
 
   return (
     isAuthenticated && (
