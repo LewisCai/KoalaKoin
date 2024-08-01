@@ -6,9 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 
-// Your Auth0 domain and client ID
-const domain = "dev-clvxuii7bvivprzz.us.auth0.com";
-const clientId = "VEDpjakOw052qZxAKjrbZ4GtpbYhBjGw";
+const domain = "your-auth0-domain";
+const clientId = "your-auth0-client-id";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +18,7 @@ root.render(
       authorizationParams={{
         redirect_uri: window.location.origin
       }}
+      cacheLocation="localstorage"  // Make sure this is correctly set
     >
       <BrowserRouter>
         <App />

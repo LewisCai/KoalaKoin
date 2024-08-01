@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { useTestResult } from '../../TestResultContext'; // Correct relative path
+import { useTestResult } from '../../TestResultContext'; // Ensure the correct path is used
 import './index.scss';
 
 const Profile = () => {
