@@ -1,15 +1,23 @@
 const { MongoClient } = require('mongodb');
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import cors package
 const path = require('path');
 require('dotenv').config({ path: './server/config.env' });
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 // Middleware
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../build'))); // Serve static files from the React app
+
+// Add CORS middleware to allow requests from localhost:3000
+app.use(cors({
+  origin: 'http://localhost:3000', // Allow requests from this origin
+  methods: 'GET,POST', // Specify allowed methods
+  credentials: true // Allow credentials (e.g., cookies) to be sent
+}));
 
 async function main() {
   const Db = process.env.ATLAS_URI;
@@ -112,7 +120,6 @@ async function main() {
             description: "They are fearless and innovative, taking risks in both investments and earnings while adapting their savings flexibly."
           }
         };
-    
 
         const personality = personalityTypes[key] || { name: "Undefined", description: "Undefined" };
 
@@ -143,7 +150,6 @@ async function main() {
         res.status(500).send('Internal server error');
       }
     });
-    
 
     app.get('/api/get-test-result', async (req, res) => {
       const { email } = req.query;
@@ -164,7 +170,6 @@ async function main() {
         res.status(500).send('Internal server error');
       }
     });
-    
 
     // Serve the React app's static files
     app.get('*', (req, res) => {
@@ -180,6 +185,5 @@ async function main() {
     console.error('Failed to connect to MongoDB', error);
   }
 }
-
 
 main();
