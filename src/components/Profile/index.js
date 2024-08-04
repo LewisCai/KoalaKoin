@@ -15,7 +15,7 @@ const Profile = () => {
       
       console.log('Fetching test result for:', user.email);
       try {
-        const response = await fetch(`http://localhost:3001/api/get-test-result?email=${user.email}`);
+        const response = await fetch(`http://wwww.koalakoin.org/api/get-test-result?email=${user.email}`);
         if (response.ok) {
           const data = await response.json();
           console.log('Received data:', data);
