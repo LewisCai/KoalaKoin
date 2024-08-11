@@ -51,7 +51,7 @@ const Profile = () => {
             <p>{user.email}</p>
           </div>
         </div>
-        {testResultData ? (
+        {testResultData && testResultData.resultCategories ? (
           <div className="test-result-container">
             <h3>Your Test Result</h3>
             <div className="test-result-summary">
@@ -61,10 +61,10 @@ const Profile = () => {
             <div className="test-result-details">
               <h4>Detailed Results:</h4>
               <ul>
-                <li><strong>Spending Type:</strong> {testResultData.resultCategories.spendingType} ({testResultData.resultCategories.frugalImpulsive.toFixed(2)}%)</li>
-                <li><strong>Investing Type:</strong> {testResultData.resultCategories.investingType} ({testResultData.resultCategories.conservativeAggressive.toFixed(2)}%)</li>
-                <li><strong>Earning Type:</strong> {testResultData.resultCategories.earningType} ({testResultData.resultCategories.traditionalEntrepreneurial.toFixed(2)}%)</li>
-                <li><strong>Saving Type:</strong> {testResultData.resultCategories.savingType} ({testResultData.resultCategories.saverAdHoc.toFixed(2)}%)</li>
+                <li><strong>Spending Type:</strong> {testResultData.resultCategories.spendingType} ({testResultData.resultCategories.frugalImpulsive?.toFixed(2)}%)</li>
+                <li><strong>Investing Type:</strong> {testResultData.resultCategories.investingType} ({testResultData.resultCategories.conservativeAggressive?.toFixed(2)}%)</li>
+                <li><strong>Earning Type:</strong> {testResultData.resultCategories.earningType} ({testResultData.resultCategories.traditionalEntrepreneurial?.toFixed(2)}%)</li>
+                <li><strong>Saving Type:</strong> {testResultData.resultCategories.savingType} ({testResultData.resultCategories.saverAdHoc?.toFixed(2)}%)</li>
               </ul>
             </div>
           </div>
