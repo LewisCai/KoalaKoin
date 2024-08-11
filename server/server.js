@@ -8,16 +8,24 @@ require('dotenv').config({ path: './server/config.env' });
 const app = express();
 const port = process.env.PORT;
 
-// Middleware
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../build'))); // Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../build')));
 
-// Add CORS middleware to allow requests from localhost:3000
-app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests from this origin
-  methods: 'GET,POST', // Specify allowed methods
-  credentials: true // Allow credentials (e.g., cookies) to be sent
-}));
+// Define CORS options
+const corsOptions = {
+  origin: 'http://localhost:3000', // Allow only this origin
+  methods: ['GET', 'POST', 'PUT', 'OPTIONS'], // Allow specific methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+};
+
+// Use CORS middleware with options
+app.use(cors(corsOptions));
+
+// Handle preflight requests (optional, since cors middleware handles this automatically)
+app.options('*', cors(corsOptions));
+
+
 
 async function main() {
   const Db = process.env.ATLAS_URI;
@@ -34,6 +42,11 @@ async function main() {
     app.post('/api/save-answers', async (req, res) => {
       try {
         const { email, resultCategories, answers } = req.body;
+
+        // Validate the incoming data
+        if (!email || !resultCategories || !answers) {
+          return res.status(400).send('Invalid data');
+        }
 
         // Detailed logging for debugging
         console.log('Received email:', email);
@@ -170,6 +183,43 @@ async function main() {
         res.status(500).send('Internal server error');
       }
     });
+
+    app.post('/api/update-user-profile', async (req, res) => {
+      console.log('Request Body'); // Log the body to see what's coming in
+      console.log('Request Body:', req.body); // Log the body to see what's coming in
+
+      try {
+        const { email, name, age, gender } = req.body;
+    
+        // Log the received data for debugging
+        console.log('Received data:', { email, name, age, gender });
+    
+        if (!email || !name || !age || !gender) {
+          console.error('Incomplete profile data:', { email, name, age, gender });
+          return res.status(400).send('Incomplete profile data');
+        }
+    
+        // This will insert or update the user profile with the provided fields
+        const result = await usersCollection.updateOne(
+          { email: email },
+          { $set: { name: name, age: age, gender: gender } },
+          { upsert: true }
+        );
+    
+        if (result.modifiedCount === 1 || result.upsertedCount === 1) {
+          res.status(200).send('Profile updated successfully');
+          console.log('Profile updated successfully');
+        } else {
+          console.error('Failed to update profile:', result);
+          res.status(500).send('Failed to update profile');
+        }
+      } catch (error) {
+        console.error('Error updating profile:', error); // Log the error
+        res.status(500).send('Internal server error');
+      }
+    });
+    
+    
 
     // Serve the React app's static files
     app.get('*', (req, res) => {

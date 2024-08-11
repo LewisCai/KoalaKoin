@@ -1,15 +1,49 @@
-import './index.scss'; // Import the CSS file for styling
-import blueLogo from '../../assets/images/bluelogo.png'; // Replace with your image path
-import goalsImage from '../../assets/images/whitelogo.png'; // Adjust the path if necessary
-import koalaImage from '../../assets/images/koalaimage.png'; // Adjust the path if necessary
+import React, { useEffect, useState } from 'react';
+import './index.scss'; 
+import blueLogo from '../../assets/images/bluelogo.png'; 
+import goalsImage from '../../assets/images/whitelogo.png'; 
+import koalaImage from '../../assets/images/koalaimage.png'; 
 import { useNavigate } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import axios from 'axios';
 
 const Home = () => {
+  const { isAuthenticated, user, isLoading } = useAuth0();
   const navigate = useNavigate();
+  const [profileComplete, setProfileComplete] = useState(null);
+
+  useEffect(() => {
+    const checkProfile = async () => {
+      if (isAuthenticated && user) {
+        try {
+          const response = await axios.get('https://www.koalakoin.org/api/check-profile', {
+            params: { email: user.email },
+          });
+          
+          const { name, age, gender } = response.data;
+          if (!name || !age || !gender) {
+            navigate('/complete-profile');
+          } else {
+            setProfileComplete(true);
+          }
+        } catch (error) {
+          console.error('Error checking profile:', error);
+        }
+      }
+    };
+
+    checkProfile();
+  }, [isAuthenticated, user, navigate]);
 
   const navigateToTest = () => {
-    navigate('/test'); // Programmatically navigate to the test page
+    if (profileComplete) {
+      navigate('/test'); // Programmatically navigate to the test page
+    }
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>; // You might want to show a spinner or some other loading indicator
+  }
 
   return (
     <div className="scroll-container">

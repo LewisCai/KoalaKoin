@@ -7,6 +7,7 @@ import Profile from './components/Profile';
 import Test from './components/Test';
 import TestResult from './components/TestResult';
 import { TestResultProvider } from './TestResultContext';
+import CompleteProfile from './components/CompleteProfile';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="course" element={<Course />} />
         <Route path="profile" element={<Profile />} />
         <Route path="testresult" element={<TestResult />} /> {/* New result page */}
+        <Route path="complete-profile" element={<CompleteProfile />} />
 
       </Route>
     </Routes>
