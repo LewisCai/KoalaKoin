@@ -10,35 +10,41 @@ import axios from 'axios';
 const Home = () => {
   const { isAuthenticated, user, isLoading } = useAuth0();
   const navigate = useNavigate();
-  const [profileComplete, setProfileComplete] = useState(null);
+  
+  // Correctly initialize the useState hook
+  const [, setProfileComplete] = useState(null);
 
   useEffect(() => {
     const checkProfile = async () => {
       if (isAuthenticated && user) {
         try {
-          const response = await axios.get('https://www.koalakoin.org/api/check-profile', {
+          const response = await axios.get('http://localhost:3001/api/check-profile', {
             params: { email: user.email },
           });
-          
-          const { name, age, gender } = response.data;
-          if (!name || !age || !gender) {
+  
+          if (response.status === 200 && response.data.profileComplete === false) {
             navigate('/complete-profile');
           } else {
             setProfileComplete(true);
           }
         } catch (error) {
-          console.error('Error checking profile:', error);
+          if (error.response && error.response.status === 404) {
+            // If the error is a 404, treat it as profile incomplete
+            console.log('User not found, navigating to complete profile');
+            navigate('/complete-profile');
+          } else {
+            console.error('Error checking profile:', error);
+          }
         }
       }
     };
-
+  
     checkProfile();
   }, [isAuthenticated, user, navigate]);
+  
 
   const navigateToTest = () => {
-    if (profileComplete) {
       navigate('/test'); // Programmatically navigate to the test page
-    }
   };
 
   if (isLoading) {

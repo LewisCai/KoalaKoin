@@ -219,6 +219,34 @@ async function main() {
       }
     });
     
+    app.get('/api/check-profile', async (req, res) => {
+      const { email } = req.query;
+      
+      console.log('Received request for email:', email);
+    
+      if (!email) {
+        return res.status(400).send('Email is required');
+      }
+    
+      try {
+        const user = await usersCollection.findOne({ email });
+        
+        if (!user) {
+          // If user is not found, return profileComplete: false
+          console.log('User not found for email:', email);
+          return res.status(200).json({ profileComplete: false });
+        }
+    
+        // If user exists, check if profile is complete
+        const profileComplete = user.name && user.age && user.gender;
+        
+        console.log('Profile complete:', profileComplete);
+        res.status(200).json({ profileComplete: !!profileComplete });
+      } catch (error) {
+        console.error('Error checking profile:', error);
+        res.status(200).json({ profileComplete: false });
+      }
+    });
     
 
     // Serve the React app's static files

@@ -44,7 +44,7 @@ const CompleteProfile = () => {
       });
   
       if (response.ok) {
-        navigate('/home');
+        navigate('/');
       } else {
         console.error('Failed to update profile:', response.status, response.statusText);
       }
