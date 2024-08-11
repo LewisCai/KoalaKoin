@@ -35,7 +35,7 @@ const CompleteProfile = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:3001/api/update-user-profile', {
+      const response = await fetch('https://www.koalakoin.org/api/update-user-profile', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

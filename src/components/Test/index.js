@@ -412,7 +412,7 @@ const Test = () => {
 
     // Send the result to the backend
     try {
-      await axios.post('http://localhost:3001/api/save-answers', { email: user.email, resultCategories, answers });
+      await axios.post('https://www.koalakoin.org/api/save-answers', { email: user.email, resultCategories, answers });
       console.log('Answers saved successfully');
     } catch (error) {
       console.error('Error saving answers:', error);

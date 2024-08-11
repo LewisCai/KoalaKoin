@@ -18,7 +18,7 @@ const Home = () => {
     const checkProfile = async () => {
       if (isAuthenticated && user) {
         try {
-          const response = await axios.get('http://localhost:3001/api/check-profile', {
+          const response = await axios.get('https://www.koalakoin.org/api/check-profile', {
             params: { email: user.email },
           });
   
