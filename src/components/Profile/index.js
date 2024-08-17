@@ -121,7 +121,7 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div className="scroll-container">
+      <div className="scroll-container-profile">
         <div className="profile-container">
           <div className="profile-header">
             <img src={user.picture} alt={user.name} className="profile-picture" />
