@@ -1,64 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+// Basic Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.scroll-container {
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  background-image: url('../../assets/images/koalakoinBackground.png');
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
 .profile-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #cccccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .profile-header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .profile-picture {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .profile-details {
   h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
   }
 
   p {
-    margin: 0;
-    color: #666;
+    margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
   }
 }
 
 .test-result-container {
-  background-color: #fff;
-  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
   h3 {
     margin-top: 0;
-  }
-
-  .test-result-summary {
+    font-size: 24px;
+    color: #444;
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
     margin-bottom: 20px;
   }
 
-  .test-result-details {
-    ul {
-      list-style-type: none;
-      padding: 0;
-
-      li {
-        margin-bottom: 10px;
-        font-size: 16px;
-
-        strong {
-          font-weight: 600;
-        }
+  .test-result-summary {
+    margin-bottom: 40px;
+    text-align: center; /* Center the text */
+  
+    p {
+      font-size: 20px; /* Increase font size */
+      color: #333; /* Darker color for emphasis */
+      line-height: 1.8; /* Increase line height for readability */
+      strong {
+        font-size: 24px; /* Make the strong text even bigger */
+        font-weight: 700; /* Bold weight for emphasis */
+        display: block; /* Ensure block-level for centering */
+        margin-bottom: 10px; /* Add space below */
       }
     }
   }
+
+  .test-result-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .result-card {
+      /* Shared styles for all result cards */
+      flex: 1 1 calc(50% - 20px); /* Adjusted for a 2-column layout */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      margin-bottom: 20px;
+
+      .card-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-container {
+        width: 100%;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+      }
+
+      .image-container.loaded {
+        opacity: 1;
+      }
+
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+
+      .text-container {
+        margin-top: 10px;
+
+        .score-text {
+          font-size: 16px;
+          font-weight: 600;
+          margin-top: 10px;
+        }
+
+        .description {
+          margin-top: 10px;
+          font-size: 14px;
+          color: #555;
+        }
+      }
+    }
+
+    /* Specific type styling */
+    .spending-result-category {
+      background-color: #ffeb99;
+      background-image: url('../../assets/images/resultBackground3.png');
+      /* Additional styles for spending type */
+    }
+
+    .investing-result-category {
+      background-color: #d5ffcf;
+      background-image: url('../../assets/images/resultBackground4.png');
+      /* Additional styles for investing type */
+    }
+
+    .earning-result-category {
+      background-color: #f3d9ff;
+      background-image: url('../../assets/images/resultBackground5.png');
+      /* Additional styles for earning type */
+    }
+
+    .saving-result-category {
+      background-color: #ffdbdb;
+      background-image: url('../../assets/images/resultBackground7.png');
+      /* Additional styles for saving type */
+      
+      .description {
+        color: #ffffff; /* Change the text color to white for better contrast */
+        padding: 10px;
+        border-radius: 8px; /* Add rounded corners */
+        text-align: center;
+      }
+    }
+    
+
+    .score-text {
+      position: absolute;
+      top: -25px;
+      right: 0;
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .description {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 20px;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.loading-container {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  padding: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 923px) {
+
+
+  .profile-container {
+    max-width: 100%;
+    margin: 5px auto;
+    padding: 20px;
+    background-color: #cccccc;
+    border-radius: 10px;
+    background-image: url('../../assets/images/koalakoinBackground2.png');
+  }
+  
+  
+  .profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-details {
+    h2 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #333;
+      font-weight: 600;
+    }
+  
+    p {
+      margin: 0px 0;
+      color: #555;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+  }
+  
+  .test-result-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 4px;
+    margin: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+    h3 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #444;
+      font-weight: 600;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+  
+    .test-result-summary {
+      margin-bottom: 40px;
+      text-align: center; /* Center the text */
+    
+      p {
+        font-size: 20px; /* Increase font size */
+        color: #333; /* Darker color for emphasis */
+        line-height: 1.8; /* Increase line height for readability */
+        strong {
+          font-size: 24px; /* Make the strong text even bigger */
+          font-weight: 700; /* Bold weight for emphasis */
+          display: block; /* Ensure block-level for centering */
+          margin-bottom: 10px; /* Add space below */
+        }
+      }
+    }
+  
+    .test-result-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+  
+      .result-card {
+        /* Shared styles for all result cards */
+        flex: 1 1 calc(50% - 20px); /* Adjusted for a 2-column layout */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        margin-bottom: 20px;
+  
+        .card-title {
+          font-size: 1.5em;
+          font-weight: bold;
+          margin-bottom: 15px;
+        }
+  
+        .card-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+  
+        .image-container {
+          width: 100%;
+          transition: opacity 1s ease-in-out;
+          opacity: 0;
+        }
+  
+        .image-container.loaded {
+          opacity: 1;
+        }
+  
+        img {
+          max-width: 100%;
+          border-radius: 10px;
+        }
+  
+        .text-container {
+          margin-top: 10px;
+  
+          .score-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+          }
+  
+          .description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+          }
+        }
+      }
+  
+      /* Specific type styling */
+      .spending-result-category {
+        background-color: #ffeb99;
+        background-image: url('../../assets/images/resultBackground3.png');
+        /* Additional styles for spending type */
+      }
+  
+      .investing-result-category {
+        background-color: #d5ffcf;
+        background-image: url('../../assets/images/resultBackground4.png');
+        /* Additional styles for investing type */
+      }
+  
+      .earning-result-category {
+        background-color: #f3d9ff;
+        background-image: url('../../assets/images/resultBackground5.png');
+        /* Additional styles for earning type */
+      }
+  
+      .saving-result-category {
+        background-color: #ffdbdb;
+        background-image: url('../../assets/images/resultBackground7.png');
+        /* Additional styles for saving type */
+        
+        .description {
+          color: #ffffff; /* Change the text color to white for better contrast */
+          padding: 10px;
+          border-radius: 8px; /* Add rounded corners */
+          text-align: center;
+        }
+      }
+      
+  
+      .score-text {
+        position: absolute;
+        top: -25px;
+        right: 0;
+        font-size: 14px;
+        color: #333;
+        font-weight: 600;
+      }
+  
+      .description {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 20px;
+        color: #000000;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  
+  .loading-container {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    padding: 20px;
+  }
+
 }
