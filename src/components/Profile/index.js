@@ -66,7 +66,7 @@ const Profile = () => {
       }
 
       try {
-        const response = await fetch(`https://www.koalakoin.org/api/get-test-result?email=${user.email}`);
+        const response = await fetch(`http://localhost:3001/api/get-test-result?email=${user.email}`);
         if (response.ok) {
           const data = await response.json();
           setTestResultData(data);
@@ -121,7 +121,7 @@ const Profile = () => {
 
   return (
     isAuthenticated && (
-      <div className="scroll-container">
+      <div className="scroll-container-profile">
         <div className="profile-container">
           <div className="profile-header">
             <img src={user.picture} alt={user.name} className="profile-picture" />
