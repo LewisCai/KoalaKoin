@@ -66,7 +66,7 @@ const Profile = () => {
       }
 
       try {
-        const response = await fetch(`http://localhost:3001/api/get-test-result?email=${user.email}`);
+        const response = await fetch(`https://www.koalakoin.org/api/get-test-result?email=${user.email}`);
         if (response.ok) {
           const data = await response.json();
           setTestResultData(data);
@@ -168,13 +168,14 @@ const Profile = () => {
                     : "Impulsive spenders tend to make spontaneous purchases without thinking much.",
                   <SliderComponent
                     label={testResultData.spendingType}
-                    score={testResultData.resultCategories.frugalImpulsive}
+                    score={testResultData.spendingType === 'Frugal' ? testResultData.resultCategories.frugalImpulsive : 100 - testResultData.resultCategories.frugalImpulsive}
                     leftLabel="Frugal"
                     rightLabel="Impulsive"
-                    fromLeft={testResultData.spendingType === 'Frugal'}
+                    fromLeft={testResultData.spendingType !== 'Frugal'}
                     color={"#ffa41c"}
                   />
                 )}
+
                 {renderResultCard(
                   testResultData.investingType,
                   'Investing',
@@ -185,13 +186,14 @@ const Profile = () => {
                     : "Aggressive investors are bold and willing to take significant risks for the chance of high returns.",
                   <SliderComponent
                     label={testResultData.investingType}
-                    score={testResultData.resultCategories.conservativeAggressive}
+                    score={testResultData.investingType === 'Conservative' ? testResultData.resultCategories.conservativeAggressive : 100 - testResultData.resultCategories.conservativeAggressive}
                     leftLabel="Conservative"
                     rightLabel="Aggressive"
-                    fromLeft={testResultData.investingType === 'Conservative'}
+                    fromLeft={testResultData.investingType !== 'Conservative'}
                     color={"#3dd151"}
                   />
                 )}
+
                 {renderResultCard(
                   testResultData.earningType,
                   'Earning',
@@ -202,13 +204,14 @@ const Profile = () => {
                     : "Entrepreneurial earners are innovative and driven to create their own opportunities in life.",
                   <SliderComponent
                     label={testResultData.earningType}
-                    score={testResultData.resultCategories.traditionalEntrepreneurial}
+                    score={testResultData.earningType === 'Traditional' ? testResultData.resultCategories.traditionalEntrepreneurial : 100 - testResultData.resultCategories.traditionalEntrepreneurial}
                     leftLabel="Traditional"
                     rightLabel="Entrepreneurial"
-                    fromLeft={testResultData.earningType === 'Traditional'}
+                    fromLeft={testResultData.earningType !== 'Traditional'}
                     color={"#c937d6"}
                   />
                 )}
+
                 {renderResultCard(
                   testResultData.savingType,
                   'Saving',
@@ -219,14 +222,15 @@ const Profile = () => {
                     : "Ad-hoc savers are flexible and less structured in their saving approach. They save whenever possible.",
                   <SliderComponent
                     label={testResultData.savingType}
-                    score={testResultData.resultCategories.saverAdHoc}
+                    score={testResultData.savingType === 'Saver' ? testResultData.resultCategories.saverAdHoc : 100 - testResultData.resultCategories.saverAdHoc}
                     leftLabel="Saver"
                     rightLabel="Ad-Hoc"
-                    fromLeft={testResultData.savingType === 'Saver'}
+                    fromLeft={testResultData.savingType !== 'Saver'}
                     color={"#eb3131"}
                   />
                 )}
               </div>
+
 
             </div>
           ) : (
