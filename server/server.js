@@ -37,6 +37,7 @@ async function main() {
 
     const db = client.db('KoalaKoinApp');
     const usersCollection = db.collection('Users');
+    const modules1Collection = db.collection('Modules');
 
     // API route to save answers
     // API route to save answers
@@ -265,7 +266,23 @@ async function main() {
       }
     });
 
+app.get('/api/module1', async (req, res) => {
+  console.log('Fetching module data for Module1');
+  try {
+    const moduleData = await modules1Collection.findOne({ moduleName: 'Module1' });
+    if (!moduleData) {
+      console.log('Module not found');
+      return res.status(404).send('Module not found');
+    }
+    console.log('Module data found:', moduleData);
+    res.status(200).json(moduleData);
+  } catch (error) {
+    console.error('Error fetching module data:', error);
+    res.status(500).send('Internal server error');
+  }
+});
 
+    
 
     // Serve the React app's static files
     app.get('*', (req, res) => {

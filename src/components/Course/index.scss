@@ -1,79 +1,55 @@
-.stage-cube-cont{
-    width: 50%;
-    height: 100%;
-    top:0;
-    padding-top:18%;
-    margin-left: 0;
-    position: absolute;
-    right: 0;
-    overflow: hidden;
-}
 
-.cubespinner {
-    animation-name: spincube;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration:12s;
-    transform-style: preserve-3d;
-    transform-origin: 100px 100px 0;
-    margin-left: calc(50% - 100px);
-
-    div {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background: rgba(179, 225, 255, 0.5);
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        font-size: 100px;  
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0 20px 0px rgb(188, 239, 255);
+.course-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-height: 100vh; /* Ensure the content fits within the viewport */
+    overflow-y: auto; /* Make the page scrollable */
+    display: flex; /* Enable flexbox for column layout */
+    flex-wrap: wrap; /* Allow items to wrap into multiple lines */
+    max-width: 80%; /* Limit the container width to 80% of the viewport */
+    margin: 0 auto; /* Center the container horizontally */
+    
+    .module {
+      flex: 1 1 30%; /* Adjust the width of the modules for a multi-column layout */
+      margin-bottom: 40px;
+      padding-right: 20px; /* Add some space between columns */
+  
+      h2 {
+        font-size: 25px; /* Make the module titles smaller */
+        color: #2c3e50;
+        margin-bottom: 8px;
+        cursor: pointer; /* Make module titles clickable */
+    
+        &:hover {
+          color: #2980b9; /* Change color on hover for better UX */
+          text-decoration: underline; /* Optional: Add underline to indicate clickability */
+        }
+      }
+    
+      .lessons {
+        list-style-type: none;
+        padding-left: 0; /* Remove left padding */
+    
+        li {
+          font-size: 20px; /* Make the lesson text smaller */
+          color: #64b2ff;
+          margin-bottom: 5px;
+          cursor: pointer; /* Make lessons clickable */
+    
+          &::before {
+            content: "•";
+            color: #2980b9;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+          }
+    
+          &:hover {
+            color: #2980b9; /* Change color on hover for better UX */
+            text-decoration: underline; /* Optional: Add underline to indicate clickability */
+          }
+        }
+      }
     }
-
-    .face1 {
-        transform: rotateY(0deg) translateZ(100px);
-    }
-
-    .face2 {
-        transform: rotateY(90deg) translateZ(100px);
-    }
-
-    .face3 {
-        transform: rotateY(180deg) translateZ(100px);
-    }
-
-    .face4 {
-        transform: rotateY(-90deg) translateZ(100px);
-    }
-
-    .face5 {
-        transform: rotateX(90deg) translateZ(100px);
-    }
-
-    .face6 {
-        transform: rotateX(-90deg) translateZ(100px);
-    }
-}
-
-@keyframes spincube {
-    from, 
-    to {
-        transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-    }
-    16% {
-        transform: rotateY(-90deg);
-    }
-    33% {
-        transform: rotateY(-90deg) rotateZ(90deg);
-    }
-    50% {
-        transform: rotateY(-180deg) rotateZ(90deg);
-    }
-    66% {
-        transform: rotateY(-270deg) rotateZ(90deg);
-    }
-    83% {
-        transform: rotateY(90deg);
-    }
-}
+  }
+  

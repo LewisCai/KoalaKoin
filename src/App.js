@@ -9,6 +9,7 @@ import TestResult from './components/TestResult';
 import { TestResultProvider } from './TestResultContext';
 import CompleteProfile from './components/CompleteProfile';
 import AdminPage from './components/AdminPage';
+import ModulePage from './components/ModulePage';
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Route path="testresult" element={<TestResult />} /> {/* New result page */}
         <Route path="complete-profile" element={<CompleteProfile />} />
         <Route path="admin" element={<AdminPage />} />
+
+        <Route path="modulepage" element={<ModulePage />} />
 
       </Route>
     </Routes>

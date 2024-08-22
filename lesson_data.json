@@ -1,0 +1,59 @@
+{
+    "lesson_1.1": {
+      "lesson_title": "Understanding Financial Literacy",
+      "lesson_overview": [
+        "Definition and importance of financial literacy",
+        "Overview of the Australian financial landscape"
+      ],
+      "sections": {
+        "section_1": {
+          "section_number": "1",
+          "section_title": "Welcome and Introduction",
+          "section_summary": "This section defines financial literacy and explains its importance in personal empowerment, avoiding financial pitfalls, and building a secure future.",
+          "content": {
+            "general_information": {
+              "info_1": "Financial literacy is the ability to understand and effectively use various financial skills, including personal financial management, budgeting, and investing. It’s about making informed decisions regarding your money, from daily spending to long-term investments."
+            },
+            "key_points": {
+              "point_1": "With financial literacy, you have the tools to take control of your financial future. This means you can confidently manage your income, expenses, savings, and investments.",
+              "point_2": "Many financial challenges, such as debt, poor credit scores, and insufficient retirement savings, can be avoided with a strong foundation in financial literacy.",
+              "point_3": "Financial literacy helps you set and achieve goals, whether it’s saving for a big purchase, planning for retirement, or ensuring you have an emergency fund."
+            },
+            "real_world_applications": {
+              "application_1": "Every time you budget your pocket money, decide to save rather than spend, or think about how to afford something in the future, you’re engaging in financial literacy.",
+              "application_2": "Planning for university, a car, a house, or even starting your own business requires an understanding of financial principles."
+            },
+            "interactive_activities": {
+              "activity_1": "Students share one financial goal or dream they have (e.g., saving for a new gadget, going on a trip, or even starting a small business). Discuss how financial literacy might help achieve these goals."
+            }
+          }
+        },
+        "section_2": {
+          "section_number": "2",
+          "section_title": "The Australian Financial Landscape: Your Financial Environment",
+          "section_summary": "This section provides an overview of the Australian financial system, including banks, financial institutions, and regulatory bodies.",
+          "content": {
+            "general_information": {
+              "info_1": "Overview of the Australian financial system, including the roles of major banks, credit unions, and building societies.",
+              "info_2": "Introduction to key regulatory bodies like ASIC, RBA, and APRA that govern financial markets and institutions."
+            },
+            "key_points": {
+              "point_1": "The 'Big Four' banks in Australia (Commonwealth Bank, Westpac, ANZ, and NAB) provide essential services like savings accounts, credit cards, loans, and mortgages.",
+              "point_2": "Smaller institutions like credit unions and building societies often offer competitive rates and personalized service.",
+              "point_3": "ASIC ensures financial markets are fair and transparent, protecting consumers from fraud and malpractice.",
+              "point_4": "RBA manages monetary policy, including setting interest rates, which affects loan repayments and the value of the Australian dollar.",
+              "point_5": "APRA supervises financial institutions to ensure they are financially sound."
+            },
+            "real_world_applications": {
+              "application_1": "Understanding how superannuation works helps in planning for retirement.",
+              "application_2": "Choosing the right financial institutions and products can significantly impact your financial well-being."
+            },
+            "interactive_activities": {
+              "activity_1": "Virtual tour of Australia’s financial institutions, where students explore different banks and regulatory bodies to learn about their functions."
+            }
+          }
+        }
+      }
+    }
+  }
+  
