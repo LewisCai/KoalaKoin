@@ -266,21 +266,26 @@ async function main() {
       }
     });
 
-app.get('/api/module1', async (req, res) => {
-  console.log('Fetching module data for Module1');
-  try {
-    const moduleData = await modules1Collection.findOne({ moduleName: 'Module1' });
-    if (!moduleData) {
-      console.log('Module not found');
-      return res.status(404).send('Module not found');
-    }
-    console.log('Module data found:', moduleData);
-    res.status(200).json(moduleData);
-  } catch (error) {
-    console.error('Error fetching module data:', error);
-    res.status(500).send('Internal server error');
-  }
-});
+    app.get('/api/modules/:moduleId', async (req, res) => {
+      const { moduleId } = req.params; // Extract the moduleId from the request parameters
+      console.log(`Fetching module data for ${moduleId}`);
+      
+      try {
+        const moduleData = await modules1Collection.findOne({ Module_ID: moduleId });
+        
+        if (!moduleData) {
+          console.log('Module not found');
+          return res.status(404).send('Module not found');
+        }
+        
+        console.log('Module data found:', moduleData);
+        res.status(200).json(moduleData);
+      } catch (error) {
+        console.error('Error fetching module data:', error);
+        res.status(500).send('Internal server error');
+      }
+    });
+    
 
     
 

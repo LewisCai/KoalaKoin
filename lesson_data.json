@@ -1,59 +1,248 @@
 {
-    "lesson_1.1": {
-      "lesson_title": "Understanding Financial Literacy",
-      "lesson_overview": [
-        "Definition and importance of financial literacy",
-        "Overview of the Australian financial landscape"
-      ],
-      "sections": {
-        "section_1": {
-          "section_number": "1",
-          "section_title": "Welcome and Introduction",
-          "section_summary": "This section defines financial literacy and explains its importance in personal empowerment, avoiding financial pitfalls, and building a secure future.",
-          "content": {
-            "general_information": {
-              "info_1": "Financial literacy is the ability to understand and effectively use various financial skills, including personal financial management, budgeting, and investing. It’s about making informed decisions regarding your money, from daily spending to long-term investments."
-            },
-            "key_points": {
-              "point_1": "With financial literacy, you have the tools to take control of your financial future. This means you can confidently manage your income, expenses, savings, and investments.",
-              "point_2": "Many financial challenges, such as debt, poor credit scores, and insufficient retirement savings, can be avoided with a strong foundation in financial literacy.",
-              "point_3": "Financial literacy helps you set and achieve goals, whether it’s saving for a big purchase, planning for retirement, or ensuring you have an emergency fund."
-            },
-            "real_world_applications": {
-              "application_1": "Every time you budget your pocket money, decide to save rather than spend, or think about how to afford something in the future, you’re engaging in financial literacy.",
-              "application_2": "Planning for university, a car, a house, or even starting your own business requires an understanding of financial principles."
-            },
-            "interactive_activities": {
-              "activity_1": "Students share one financial goal or dream they have (e.g., saving for a new gadget, going on a trip, or even starting a small business). Discuss how financial literacy might help achieve these goals."
+  "Module 2": {
+    "Title": "Budgeting and Saving",
+    "Lessons": {
+      "Lesson 2.1": {
+        "Title": "Creating a Budget",
+        "Sections": {
+          "1": {
+            "Title": "Introduction to Budgeting",
+            "Subsections": {
+              "What is a Budget?": {
+                "Definition": "A budget is a financial plan that outlines your expected income and expenses over a specific period, typically a month. It helps you manage your money by ensuring that you live within your means and allocate funds toward your financial goals."
+              },
+              "Importance of Budgeting": {
+                "Financial Control": "A budget helps you take control of your finances by providing a clear picture of where your money is going.",
+                "Goal Achievement": "Budgeting allows you to allocate resources toward your short-term and long-term goals, ensuring you have the funds necessary to achieve them.",
+                "Avoiding Debt": "By planning your expenses, a budget helps you avoid overspending and accumulating debt."
+              },
+              "Discussion Prompt": "Ask students if they or their families currently use a budget and what they think the benefits might be. Encourage them to share their experiences and thoughts on budgeting."
+            }
+          },
+          "2": {
+            "Title": "Components of a Budget",
+            "Subsections": {
+              "Essential Components of a Budget": {
+                "Income": {
+                  "Definition": "The money you receive, which can come from various sources such as wages, allowances, gifts, or investments.",
+                  "Types of Income": {
+                    "Earned Income": "Money from work (e.g., salary, wages).",
+                    "Passive Income": "Money from investments or rental properties.",
+                    "Other Income": "Any other money received, like gifts or government payments."
+                  }
+                },
+                "Fixed Expenses": {
+                  "Definition": "Regular, predictable expenses that remain the same each period.",
+                  "Examples": "Rent, utility bills, insurance premiums, and subscriptions."
+                },
+                "Variable Expenses": {
+                  "Definition": "Expenses that can fluctuate each period depending on your usage or choices.",
+                  "Examples": "Groceries, entertainment, transportation, and dining out."
+                },
+                "Savings": {
+                  "Definition": "Money set aside for future use, such as for emergencies, large purchases, or retirement.",
+                  "Importance": "Regular savings should be a key component of every budget to ensure financial security."
+                },
+                "Debt Repayment": {
+                  "Definition": "Money allocated to pay off debts, such as credit card balances, student loans, or personal loans.",
+                  "Strategy": "Prioritising high-interest debt can help reduce the overall cost of borrowing."
+                }
+              },
+              "Interactive Activity": "Use a simple scenario where students must allocate a monthly income to cover various expenses (e.g., rent, food, entertainment). Students will create a sample budget based on the scenario and discuss how they prioritised their spending."
+            }
+          },
+          "3": {
+            "Title": "Tracking Income and Expenses",
+            "Subsections": {
+              "Why Track Your Finances?": {
+                "Understanding Cash Flow": "Tracking your income and expenses helps you understand your cash flow—whether you’re living within your means or spending more than you earn.",
+                "Identifying Spending Patterns": "By keeping track of where your money goes, you can identify unnecessary expenses and make adjustments to improve your financial situation."
+              },
+              "Methods for Tracking Finances": {
+                "Manual Tracking": {
+                  "Method": "Writing down all income and expenses in a notebook or on a spreadsheet.",
+                  "Advantages": "Low-cost and straightforward, but requires discipline and consistency."
+                },
+                "Digital Tools": {
+                  "Budgeting Apps": "There are various apps available that automatically track income and expenses by linking to your bank accounts.",
+                  "Spreadsheets": "Use templates available online to create and maintain a digital budget.",
+                  "Bank Statements": "Regularly reviewing your bank and credit card statements to categorise and track expenses."
+                }
+              },
+              "Balancing Your Budget": {
+                "Surplus vs. Deficit": {
+                  "Surplus": "When your income exceeds your expenses, you have a surplus. This extra money can be used for savings, investments, or paying off debt faster.",
+                  "Deficit": "When your expenses exceed your income, you have a deficit. This situation can lead to debt if not corrected by reducing expenses or increasing income."
+                },
+                "Adjusting the Budget": {
+                  "Expense Reduction": "Identify non-essential expenses that can be cut or reduced.",
+                  "Income Increase": "Consider ways to increase your income, such as taking on extra work or selling unused items."
+                }
+              },
+              "Interactive Exercise": "Over the course of a week, students track all of their expenses, categorising them as fixed, variable, or savings. They will then compare their actual spending with their budgeted amounts and reflect on any discrepancies."
+            }
+          },
+          "4": {
+            "Title": "Conclusion and Reflection",
+            "Subsections": {
+              "Recap of Key Points": [
+                "Components of a Budget: Understanding the different elements of a budget—income, fixed and variable expenses, savings, and debt repayment—is crucial to managing your finances.",
+                "Tracking Finances: Regularly monitoring your income and expenses helps you stay on track with your budget and make informed financial decisions."
+              ]
             }
           }
-        },
-        "section_2": {
-          "section_number": "2",
-          "section_title": "The Australian Financial Landscape: Your Financial Environment",
-          "section_summary": "This section provides an overview of the Australian financial system, including banks, financial institutions, and regulatory bodies.",
-          "content": {
-            "general_information": {
-              "info_1": "Overview of the Australian financial system, including the roles of major banks, credit unions, and building societies.",
-              "info_2": "Introduction to key regulatory bodies like ASIC, RBA, and APRA that govern financial markets and institutions."
-            },
-            "key_points": {
-              "point_1": "The 'Big Four' banks in Australia (Commonwealth Bank, Westpac, ANZ, and NAB) provide essential services like savings accounts, credit cards, loans, and mortgages.",
-              "point_2": "Smaller institutions like credit unions and building societies often offer competitive rates and personalized service.",
-              "point_3": "ASIC ensures financial markets are fair and transparent, protecting consumers from fraud and malpractice.",
-              "point_4": "RBA manages monetary policy, including setting interest rates, which affects loan repayments and the value of the Australian dollar.",
-              "point_5": "APRA supervises financial institutions to ensure they are financially sound."
-            },
-            "real_world_applications": {
-              "application_1": "Understanding how superannuation works helps in planning for retirement.",
-              "application_2": "Choosing the right financial institutions and products can significantly impact your financial well-being."
-            },
-            "interactive_activities": {
-              "activity_1": "Virtual tour of Australia’s financial institutions, where students explore different banks and regulatory bodies to learn about their functions."
+        }
+      },
+      "Lesson 2.2": {
+        "Title": "Strategies for Saving",
+        "Sections": {
+          "1": {
+            "Title": "The Importance of Saving",
+            "Subsections": {
+              "Why is Saving Important?": {
+                "Financial Security": {
+                  "Emergency Fund": "Having savings set aside for emergencies helps you handle unexpected expenses, such as medical bills or car repairs, without going into debt.",
+                  "Peace of Mind": "Knowing you have money saved can reduce financial stress and provide a safety net during uncertain times."
+                },
+                "Achieving Financial Goals": {
+                  "Short-Term Goals": "Saving allows you to afford things like a new phone, a holiday, or special events without borrowing money.",
+                  "Long-Term Goals": "Savings are essential for larger life goals such as buying a house, starting a business, or retirement."
+                },
+                "Building Wealth": {
+                  "Interest and Investments": "Money saved can grow over time through interest in a savings account or by being invested in higher-return opportunities. The earlier you start saving, the more time your money has to grow."
+                }
+              },
+              "Discussion Prompt": "Ask students to think about something they want to save for. Discuss how saving can help them achieve this goal without relying on credit or loans."
+            }
+          },
+          "2": {
+            "Title": "Types of Savings Accounts in Australia",
+            "Subsections": {
+              "Understanding Savings Accounts": {
+                "What is a Savings Account?": {
+                  "Definition": "A savings account is a type of bank account designed to hold money that you do not need immediately, allowing it to earn interest over time."
+                }
+              },
+              "Common Types of Savings Accounts": {
+                "High-Interest Savings Accounts": {
+                  "Features": "These accounts offer higher interest rates compared to regular transaction accounts, encouraging you to save more by rewarding you with interest on your balance.",
+                  "Pros": "Higher interest rates mean your money grows faster.",
+                  "Cons": "These accounts may have conditions, such as needing to deposit a certain amount each month to earn the maximum interest rate.",
+                  "Example": "ANZ Progress Saver, Commonwealth Bank GoalSaver."
+                },
+                "Online Savings Accounts": {
+                  "Features": "Typically offer higher interest rates and lower fees because they are managed online without the overhead costs of physical branches.",
+                  "Pros": "Easy to manage online with higher interest rates and fewer fees.",
+                  "Cons": "Limited access to in-person support.",
+                  "Example": "ING Savings Maximiser, UBank USaver."
+                },
+                "Term Deposits": {
+                  "Features": "With a term deposit, you lock your money away for a fixed term (e.g., 6 months, 1 year) in exchange for a guaranteed interest rate.",
+                  "Pros": "Guaranteed interest rates make it a secure option for risk-averse savers.",
+                  "Cons": "Penalties for withdrawing money before the term ends, and usually lower returns compared to more flexible accounts.",
+                  "Example": "NAB Term Deposit, Westpac Term Deposit."
+                },
+                "Bonus Savings Accounts": {
+                  "Features": "These accounts offer bonus interest if you meet certain conditions, such as not making any withdrawals or making regular deposits.",
+                  "Pros": "Encourages regular saving and offers higher interest when conditions are met.",
+                  "Cons": "If conditions are not met, the interest rate can be much lower.",
+                  "Example": "Commonwealth Bank Youthsaver, Westpac Life."
+                }
+              },
+              "Interactive Exercise": "Provide students with details of various savings accounts available in Australia. Ask them to compare the features, interest rates, and conditions to decide which account would best suit their needs. They can then present their choice to the class, explaining why they chose that particular account."
+            }
+          },
+          "3": {
+            "Title": "Developing a Savings Strategy",
+            "Subsections": {
+              "Setting Savings Goals": {
+                "SMART Goals": "Reinforce the use of the SMART (Specific, Measurable, Achievable, Relevant, Time-bound) framework for setting saving goals, as discussed in the previous lesson."
+              },
+              "Creating a Savings Plan": {
+                "Automatic Transfers": "Set up automatic transfers from your transaction account to your savings account on payday to ensure you save regularly.",
+                "Start Small": "Begin with an achievable savings target, and gradually increase the amount as you become more comfortable with saving.",
+                "Monitor Progress": "Regularly check your savings account to monitor progress and stay motivated. Adjust your plan as needed to stay on track."
+              },
+              "Reflection Activity": "Students will develop a savings plan using the SMART framework and choose the most suitable savings account to help them reach their goal. They will outline how much they plan to save, how often, and why they chose their particular account."
+            }
+          },
+          "4": {
+            "Title": "Conclusion and Reflection",
+            "Subsections": {
+              "Recap of Key Points": [
+                "Importance of Saving: Saving is crucial for financial security, achieving goals, and building wealth.",
+                "Types of Savings Accounts: Different accounts offer different benefits, and it's important to choose one that aligns with your financial goals."
+              ]
+            }
+          }
+        }
+      },
+      "Lesson 2.3": {
+        "Title": "Managing Expenses",
+        "Sections": {
+          "1": {
+            "Title": "Introduction to Managing Expenses",
+            "Subsections": {
+              "Why Managing Expenses is Important": {
+                "Financial Stability": "Properly managing expenses ensures that you live within your means, avoid debt, and have money available for saving and investing.",
+                "Achieving Financial Goals": "By controlling your spending, you can allocate more funds toward your financial goals, such as saving for a trip or buying a car.",
+                "Preventing Financial Stress": "When you manage your expenses well, you reduce the risk of overspending and the financial stress that comes with it."
+              },
+              "Discussion Prompt": "Begin with a conversation about why it's important to manage expenses. Ask students how they currently manage their spending and what challenges they face."
+            }
+          },
+          "2": {
+            "Title": "Identifying Needs vs. Wants",
+            "Subsections": {
+              "Understanding Needs and Wants": {
+                "Needs": {
+                  "Definition": "Needs are essential expenses required for basic survival and well-being. These are things you must have to live and function daily.",
+                  "Examples": "Food, shelter, clothing, utilities, healthcare, transportation, and education."
+                },
+                "Wants": {
+                  "Definition": "Wants are non-essential items or services that enhance your lifestyle but are not necessary for basic survival.",
+                  "Examples": "Dining out, entertainment, luxury items, hobbies, and vacations."
+                }
+              },
+              "Interactive Activity": "Provide students with a list of various expenses (e.g., groceries, Netflix subscription, mobile phone plan, designer clothes). Have them categorise each item as a 'need' or a 'want' and then discuss their choices with the class."
+            }
+          },
+          "3": {
+            "Title": "Tips for Reducing Expenses",
+            "Subsections": {
+              "Practical Strategies to Cut Costs": {
+                "Review and Adjust Spending Habits": {
+                  "Track Spending": "Regularly review your expenses to identify areas where you can cut back. Use budgeting apps or maintain a spending journal.",
+                  "Limit Impulse Purchases": "Before buying something non-essential, take a moment to consider whether it's a need or a want. Implement the '24-hour rule' where you wait a day before making a purchase to see if you still want it."
+                },
+                "Reduce Fixed Expenses": {
+                  "Downsize Subscriptions": "Evaluate your subscriptions (e.g., streaming services, gym memberships) and cancel or downgrade those you don't use frequently.",
+                  "Negotiate Bills": "Contact service providers (e.g., internet, insurance) to negotiate better rates or switch to more affordable plans."
+                },
+                "Cut Back on Variable Expenses": {
+                  "Meal Planning": "Plan meals ahead of time to avoid eating out frequently and reduce food waste.",
+                  "Use Public Transport": "Instead of driving, consider using public transport, cycling, or carpooling to save on fuel and parking costs.",
+                  "Energy Efficiency": "Save on utilities by adopting energy-saving habits, such as turning off lights when not in use, using energy-efficient appliances, and reducing water usage."
+                }
+              },
+              "Interactive Exercise": "Have students create a plan to reduce their personal expenses. They can choose one fixed expense and one variable expense to focus on, then outline the steps they’ll take to cut costs in these areas."
+            }
+          },
+          "4": {
+            "Title": "Conclusion and Reflection",
+            "Subsections": {
+              "Recap of Key Points": [
+                "Identifying Needs vs. Wants: Distinguishing between needs and wants is crucial for effective budgeting and financial management.",
+                "Reducing Expenses: Implementing practical tips for reducing both fixed and variable expenses can help you save money and achieve your financial goals."
+              ],
+              "Looking Forward": {
+                "What’s Next": "In the next lesson, we will explore different types of income, including earned, passive, and portfolio income, and how to maximise your earnings."
+              },
+              "Final Reflection": "Students will reflect on their spending habits and identify one or two areas where they can reduce expenses. They will write down their reflections and create a personal action plan to manage their expenses better."
             }
           }
         }
       }
     }
   }
-  
+}

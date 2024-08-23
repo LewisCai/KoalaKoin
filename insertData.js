@@ -29,8 +29,8 @@ async function insertLessonData() {
     const database = client.db('KoalaKoinApp');
     const collection = database.collection('Modules');
 
-    // Insert the data into the Module1 document
-    await collection.insertOne({ moduleName: 'Module1', data });
+    // Insert the data into the Modules collection with a specific module name
+    await collection.insertOne({ ModuleContent: data, Module_ID: 'M2' });
 
     console.log('Lesson data inserted successfully');
   } catch (err) {
