@@ -8,7 +8,8 @@ const ModulePage = () => {
   const [moduleData, setModuleData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedLesson, setSelectedLesson] = useState(null);
+  const [selectedLessonKey, setSelectedLessonKey] = useState(null);
+  const [selectedSection, setSelectedSection] = useState(null);
 
   useEffect(() => {
     const fetchModuleData = async () => {
@@ -18,8 +19,12 @@ const ModulePage = () => {
         setModuleData(moduleContent);
 
         const firstLessonKey = Object.keys(moduleContent.Lessons)[0];
+        setSelectedLessonKey(firstLessonKey);
+
         const firstLesson = moduleContent.Lessons[firstLessonKey];
-        setSelectedLesson(firstLesson);
+        const firstSectionKey = Object.keys(firstLesson.Sections)[0];
+        const firstSection = firstLesson.Sections[firstSectionKey];
+        setSelectedSection(firstSection);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -30,11 +35,23 @@ const ModulePage = () => {
     fetchModuleData();
   }, [moduleId]); // Refetch when moduleId changes
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!moduleData || !moduleData.Lessons) return <div>Error: Module data is missing or incomplete.</div>;
+  const handleNextLesson = () => {
+    const lessonKeys = Object.keys(moduleData.Lessons);
+    const currentIndex = lessonKeys.indexOf(selectedLessonKey);
+    if (currentIndex < lessonKeys.length - 1) {
+      setSelectedLessonKey(lessonKeys[currentIndex + 1]);
+      setSelectedSection(Object.values(moduleData.Lessons[lessonKeys[currentIndex + 1]].Sections)[0]);
+    }
+  };
 
-  const lessons = Object.keys(moduleData.Lessons);
+  const handlePreviousLesson = () => {
+    const lessonKeys = Object.keys(moduleData.Lessons);
+    const currentIndex = lessonKeys.indexOf(selectedLessonKey);
+    if (currentIndex > 0) {
+      setSelectedLessonKey(lessonKeys[currentIndex - 1]);
+      setSelectedSection(Object.values(moduleData.Lessons[lessonKeys[currentIndex - 1]].Sections)[0]);
+    }
+  };
 
   const renderContent = (content) => {
     if (typeof content === 'string') {
@@ -51,7 +68,7 @@ const ModulePage = () => {
       return (
         <div>
           {Object.entries(content).map(([key, value], idx) => (
-            <div key={idx}>
+            <div key={idx} style={{ marginBottom: '10px' }}>
               <strong>{key}:</strong>
               <div style={{ paddingLeft: '15px' }}>{renderContent(value)}</div>
             </div>
@@ -63,20 +80,33 @@ const ModulePage = () => {
     }
   };
 
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!moduleData || !moduleData.Lessons) return <div>Error: Module data is missing or incomplete.</div>;
+
+  const selectedLesson = moduleData.Lessons[selectedLessonKey];
+
   return (
     <div className="module-page">
       <div className="module-sidebar">
-        <h3>{moduleData.Title}</h3>
-        <ul>
-          {lessons.map((lessonKey, index) => {
-            const lesson = moduleData.Lessons[lessonKey];
+        <div className="module-header">
+          <h3>{moduleData.Title}</h3>
+        </div>
+        <div className="lesson-navigation">
+          <button onClick={handlePreviousLesson}>&lt;</button>
+          <h4>{selectedLesson.Title}</h4>
+          <button onClick={handleNextLesson}>&gt;</button>
+        </div>
+        <ul className="sections-list">
+          {Object.keys(selectedLesson.Sections).map((sectionKey, idx) => {
+            const section = selectedLesson.Sections[sectionKey];
             return (
               <li
-                key={index}
-                className={selectedLesson === lesson ? 'active' : ''}
-                onClick={() => setSelectedLesson(lesson)}
+                key={idx}
+                className={selectedSection === section ? 'active' : ''}
+                onClick={() => setSelectedSection(section)}
               >
-                {`${lessonKey.replace('_', '.')}: ${lesson.Title}`}
+                {section.Title}
               </li>
             );
           })}
@@ -84,25 +114,17 @@ const ModulePage = () => {
       </div>
 
       <div className="module-content">
-        {selectedLesson ? (
+        {selectedSection ? (
           <>
-            <h3>{selectedLesson.Title}</h3>
-            {Object.keys(selectedLesson.Sections).map((sectionKey, idx) => {
-              const section = selectedLesson.Sections[sectionKey];
-              return (
+            <h3>{selectedSection.Title}</h3>
+            <div>
+              {selectedSection.Subsections && Object.entries(selectedSection.Subsections).map(([subsectionKey, subsectionContent], idx) => (
                 <div key={idx}>
-                  <h4>{section.Title}</h4>
-                  <div>
-                    {section.Subsections && Object.entries(section.Subsections).map(([subsectionKey, subsectionContent], idx) => (
-                      <div key={idx}>
-                        <h5>{subsectionKey}</h5>
-                        {renderContent(subsectionContent)}
-                      </div>
-                    ))}
-                  </div>
+                  <h5>{subsectionKey}</h5>
+                  {renderContent(subsectionContent)}
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </>
         ) : (
           <p>Select a section to view its content</p>

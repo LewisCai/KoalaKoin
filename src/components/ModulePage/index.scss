@@ -2,33 +2,91 @@
   display: flex;
   height: 100vh;
   background-color: #f4f6f8;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
 
   .module-sidebar {
-    max-width:400px;
+    width: 300px;
     background-color: #ffffff;
     padding: 20px;
     border-right: 1px solid #e0e0e0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 
-    h3 {
-      font-size: 1.5rem;
-      font-weight: bold;
+    .module-header {
+      width: 100%;
+      text-align: center;
       margin-bottom: 20px;
+
+      h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #007bff;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 10px;
+      }
     }
 
-    ul {
+    .lesson-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      border-bottom: 2px solid #e0e0e0;
+
+      button {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #007bff;
+        padding: 5px 10px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #0056b3;
+        }
+
+        &:disabled {
+          color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+
+      h4 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+        flex-grow: 1;
+        color: #333;
+      }
+    }
+
+    .sections-list {
       list-style: none;
       padding: 0;
+      width: 100%;
+      overflow-y: auto;
+      flex-grow: 1;
 
       li {
         font-size: 1.5rem;
-        padding: 10px;
+        padding: 15px 20px;
         cursor: pointer;
-        text-transform: capitalize;
-        color: #333;
         transition: background-color 0.3s, color 0.3s;
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0;
 
         &:hover {
-          background-color: #e0e0e0;
+          background-color: #f8f9fa;
         }
 
         &.active {
@@ -43,59 +101,112 @@
   .module-content {
     flex-grow: 1;
     padding: 40px;
-    overflow-y: auto; // Changed to 'auto' for better UX
     background-color: #ffffff;
-    border-left: 1px solid #e0e0e0;
+    overflow-y: auto;
 
     h3 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: bold;
       margin-bottom: 20px;
-      color: #4edf49;
+      color: #007bff;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: #555;
       margin-bottom: 15px;
+      line-height: 1.6;
     }
 
     h4 {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       font-weight: bold;
-      color: #15ae99;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      color: #2dcd45;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
     }
 
-
     h5 {
-      font-size: 2rem; // Increase the size as needed
+      font-size: 2rem;
       font-weight: bold;
       color: #333;
-      margin-top: 15px;
+      margin-top: 20px;
       margin-bottom: 10px;
     }
 
     ul {
       list-style: none;
-      padding-left: 0;
+      padding-left: 20px;
+      margin-bottom: 20px;
 
       li {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         color: #333;
-        margin-bottom: 8px;
-        padding-left: 10px;
+        margin-bottom: 10px;
+        padding-left: 15px;
         position: relative;
+        line-height: 1.5;
 
         &::before {
           content: "•";
-          color: #000000;
+          color: #007bff;
           font-weight: bold;
           display: inline-block;
           width: 1.5em;
           margin-left: -1em;
         }
+      }
+    }
+
+    .subsection {
+      padding-left: 20px;
+      border-left: 2px solid #e0e0e0;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .module-sidebar {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      box-shadow: none;
+      position: static;
+
+      .module-header {
+        h3 {
+          font-size: 1.8rem;
+        }
+      }
+
+      .lesson-navigation h4 {
+        font-size: 1.6rem;
+      }
+
+      .sections-list {
+        li {
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    .module-content {
+      padding: 20px;
+
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      h4 {
+        font-size: 2rem;
+      }
+
+      p, li {
+        font-size: 1.6rem;
       }
     }
   }
