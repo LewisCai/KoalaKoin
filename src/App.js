@@ -24,7 +24,7 @@ function App() {
         <Route path="testresult" element={<TestResult />} /> {/* New result page */}
         <Route path="complete-profile" element={<CompleteProfile />} />
         <Route path="admin" element={<AdminPage />} />
-        <Route path="/module/:moduleId" element={<ModulePage />} />
+        <Route path="/module/:moduleId/*" element={<ModulePage />} />
 
       </Route>
     </Routes>

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './index.scss';
 
 const ModulePage = () => {
-  const { moduleId } = useParams(); // Get the moduleId from the URL
+  const { moduleId } = useParams();
+  const location = useLocation();
   const [moduleData, setModuleData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,13 +19,16 @@ const ModulePage = () => {
         const moduleContent = response.data.ModuleContent[`Module ${moduleId.substring(1)}`];
         setModuleData(moduleContent);
 
-        const firstLessonKey = Object.keys(moduleContent.Lessons)[0];
-        setSelectedLessonKey(firstLessonKey);
+        const params = new URLSearchParams(location.search);
+        const lessonKey = params.get('lesson') || Object.keys(moduleContent.Lessons)[0];
+        setSelectedLessonKey(lessonKey);
 
-        const firstLesson = moduleContent.Lessons[firstLessonKey];
-        const firstSectionKey = Object.keys(firstLesson.Sections)[0];
-        const firstSection = firstLesson.Sections[firstSectionKey];
-        setSelectedSection(firstSection);
+        const selectedLesson = moduleContent.Lessons[lessonKey];
+        if (selectedLesson) {
+          const firstSectionKey = Object.keys(selectedLesson.Sections)[0];
+          const firstSection = selectedLesson.Sections[firstSectionKey];
+          setSelectedSection(firstSection);
+        }
       } catch (err) {
         setError(err.message);
       } finally {
@@ -33,27 +37,33 @@ const ModulePage = () => {
     };
 
     fetchModuleData();
-  }, [moduleId]); // Refetch when moduleId changes
+  }, [moduleId, location.search]);
 
   const handleNextLesson = () => {
-    const lessonKeys = Object.keys(moduleData.Lessons);
+    const lessonKeys = Object.keys(moduleData?.Lessons || {});
     const currentIndex = lessonKeys.indexOf(selectedLessonKey);
     if (currentIndex < lessonKeys.length - 1) {
-      setSelectedLessonKey(lessonKeys[currentIndex + 1]);
-      setSelectedSection(Object.values(moduleData.Lessons[lessonKeys[currentIndex + 1]].Sections)[0]);
+      const nextLessonKey = lessonKeys[currentIndex + 1];
+      setSelectedLessonKey(nextLessonKey);
+      const nextSection = Object.values(moduleData.Lessons[nextLessonKey].Sections)[0];
+      setSelectedSection(nextSection);
     }
   };
 
   const handlePreviousLesson = () => {
-    const lessonKeys = Object.keys(moduleData.Lessons);
+    const lessonKeys = Object.keys(moduleData?.Lessons || {});
     const currentIndex = lessonKeys.indexOf(selectedLessonKey);
     if (currentIndex > 0) {
-      setSelectedLessonKey(lessonKeys[currentIndex - 1]);
-      setSelectedSection(Object.values(moduleData.Lessons[lessonKeys[currentIndex - 1]].Sections)[0]);
+      const previousLessonKey = lessonKeys[currentIndex - 1];
+      setSelectedLessonKey(previousLessonKey);
+      const previousSection = Object.values(moduleData.Lessons[previousLessonKey].Sections)[0];
+      setSelectedSection(previousSection);
     }
   };
 
-  const renderContent = (content) => {
+  const isObject = (val) => val && typeof val === 'object' && !Array.isArray(val);
+
+  const renderContent = (content, depth = 0) => {
     if (typeof content === 'string') {
       return <p>{content}</p>;
     } else if (Array.isArray(content)) {
@@ -64,13 +74,24 @@ const ModulePage = () => {
           ))}
         </ul>
       );
-    } else if (typeof content === 'object' && content !== null) {
+    } else if (isObject(content)) {
+      const isDeepestLevel = Object.values(content).every(val => !isObject(val));
+
       return (
         <div>
           {Object.entries(content).map(([key, value], idx) => (
-            <div key={idx} style={{ marginBottom: '10px' }}>
-              <strong>{key}:</strong>
-              <div style={{ paddingLeft: '15px' }}>{renderContent(value)}</div>
+            <div key={idx} style={isDeepestLevel ? { marginBottom: '20px' } : { marginBottom: '10px' }}>
+              {isDeepestLevel ? (
+                <div className="card">
+                  <h5>{key}</h5>
+                  <div className="card-content">{renderContent(value, depth + 1)}</div>
+                </div>
+              ) : (
+                <>
+                  <h5>{key}</h5>
+                  <div style={{ paddingLeft: depth === 0 ? '15px' : '0' }}>{renderContent(value, depth + 1)}</div>
+                </>
+              )}
             </div>
           ))}
         </div>
@@ -92,13 +113,15 @@ const ModulePage = () => {
         <div className="module-header">
           <h3>{moduleData.Title}</h3>
         </div>
-        <div className="lesson-navigation">
-          <button onClick={handlePreviousLesson}>&lt;</button>
-          <h4>{selectedLesson.Title}</h4>
-          <button onClick={handleNextLesson}>&gt;</button>
-        </div>
+        {selectedLesson && (
+          <div className="lesson-navigation">
+            <button onClick={handlePreviousLesson}>&lt;</button>
+            <h4>{selectedLesson.Title}</h4>
+            <button onClick={handleNextLesson}>&gt;</button>
+          </div>
+        )}
         <ul className="sections-list">
-          {Object.keys(selectedLesson.Sections).map((sectionKey, idx) => {
+          {selectedLesson && Object.keys(selectedLesson.Sections).map((sectionKey, idx) => {
             const section = selectedLesson.Sections[sectionKey];
             return (
               <li
@@ -117,13 +140,8 @@ const ModulePage = () => {
         {selectedSection ? (
           <>
             <h3>{selectedSection.Title}</h3>
-            <div>
-              {selectedSection.Subsections && Object.entries(selectedSection.Subsections).map(([subsectionKey, subsectionContent], idx) => (
-                <div key={idx}>
-                  <h5>{subsectionKey}</h5>
-                  {renderContent(subsectionContent)}
-                </div>
-              ))}
+            <div className="cards-container">
+              {selectedSection.Subsections && renderContent(selectedSection.Subsections, 1)}
             </div>
           </>
         ) : (
