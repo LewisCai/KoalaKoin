@@ -30,7 +30,7 @@ async function insertLessonData() {
     const collection = database.collection('Modules');
 
     // Insert the data into the Modules collection with a specific module name
-    await collection.insertOne({ ModuleContent: data, Module_ID: 'M2' });
+    await collection.insertOne({ ModuleContent: data, Module_ID: 'M10' });
 
     console.log('Lesson data inserted successfully');
   } catch (err) {

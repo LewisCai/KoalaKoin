@@ -1,244 +1,182 @@
 {
-  "Module 2": {
-    "Title": "Budgeting and Saving",
+  "Module 10": {
+    "Title": "Advanced Topics",
     "Lessons": {
-      "Lesson 2.1": {
-        "Title": "Creating a Budget",
+      "Lesson 10.1": {
+        "Title": "Entrepreneurship",
         "Sections": {
           "1": {
-            "Title": "Introduction to Budgeting",
+            "Title": "Introduction to Entrepreneurship",
             "Subsections": {
-              "What is a Budget?": {
-                "Definition": "A budget is a financial plan that outlines your expected income and expenses over a specific period, typically a month. It helps you manage your money by ensuring that you live within your means and allocate funds toward your financial goals."
+              "What is Entrepreneurship?": {
+                "Definition": "Entrepreneurship is the process of starting, organising, managing, and assuming the risks of a business or enterprise. Entrepreneurs identify a need or opportunity in the market and create a business to meet that need."
               },
-              "Importance of Budgeting": {
-                "Financial Control": "A budget helps you take control of your finances by providing a clear picture of where your money is going.",
-                "Goal Achievement": "Budgeting allows you to allocate resources toward your short-term and long-term goals, ensuring you have the funds necessary to achieve them.",
-                "Avoiding Debt": "By planning your expenses, a budget helps you avoid overspending and accumulating debt."
+              "Types of Entrepreneurs": {
+                "Small Business Owners": "Entrepreneurs who start and manage a small business, such as a local retail store, service provider, or online business.",
+                "Innovators": "Entrepreneurs who develop new products, services, or technologies that disrupt industries and create new markets.",
+                "Social Entrepreneurs": "Entrepreneurs who focus on creating businesses that address social, environmental, or community issues."
               },
-              "Discussion Prompt": "Ask students if they or their families currently use a budget and what they think the benefits might be. Encourage them to share their experiences and thoughts on budgeting."
+              "Discussion Prompt": "Ask students if they know any entrepreneurs, either personally or in the public eye. Discuss what these entrepreneurs do and what qualities they think are important for success in entrepreneurship."
             }
           },
           "2": {
-            "Title": "Components of a Budget",
+            "Title": "Starting a Small Business",
             "Subsections": {
-              "Essential Components of a Budget": {
-                "Income": {
-                  "Definition": "The money you receive, which can come from various sources such as wages, allowances, gifts, or investments.",
-                  "Types of Income": {
-                    "Earned Income": "Money from work (e.g., salary, wages).",
-                    "Passive Income": "Money from investments or rental properties.",
-                    "Other Income": "Any other money received, like gifts or government payments."
-                  }
+              "Step 1: Developing a Business Idea": {
+                "Identifying Opportunities": {
+                  "Market Research": "Analyse the market to identify gaps or unmet needs that your business could address. Consider current trends, consumer demands, and areas where competitors might be lacking.",
+                  "Personal Interests and Skills": "Think about your own interests, skills, and passions. A successful business often aligns with the entrepreneur’s strengths and areas of expertise."
                 },
-                "Fixed Expenses": {
-                  "Definition": "Regular, predictable expenses that remain the same each period.",
-                  "Examples": "Rent, utility bills, insurance premiums, and subscriptions."
-                },
-                "Variable Expenses": {
-                  "Definition": "Expenses that can fluctuate each period depending on your usage or choices.",
-                  "Examples": "Groceries, entertainment, transportation, and dining out."
-                },
-                "Savings": {
-                  "Definition": "Money set aside for future use, such as for emergencies, large purchases, or retirement.",
-                  "Importance": "Regular savings should be a key component of every budget to ensure financial security."
-                },
-                "Debt Repayment": {
-                  "Definition": "Money allocated to pay off debts, such as credit card balances, student loans, or personal loans.",
-                  "Strategy": "Prioritising high-interest debt can help reduce the overall cost of borrowing."
+                "Creating a Business Concept": {
+                  "Unique Value Proposition": "Define what makes your business different from competitors. What value will you offer to customers that they can’t get elsewhere?",
+                  "Target Market": "Identify your target customers. Who are they, what are their needs, and how will your product or service meet those needs?"
                 }
               },
-              "Interactive Activity": "Use a simple scenario where students must allocate a monthly income to cover various expenses (e.g., rent, food, entertainment). Students will create a sample budget based on the scenario and discuss how they prioritised their spending."
+              "Interactive Activity": "Have students brainstorm potential business ideas based on their interests and market opportunities. They should outline their business concept, unique value proposition, and target market. Discuss their ideas as a class."
             }
           },
           "3": {
-            "Title": "Tracking Income and Expenses",
+            "Title": "Writing a Business Plan",
             "Subsections": {
-              "Why Track Your Finances?": {
-                "Understanding Cash Flow": "Tracking your income and expenses helps you understand your cash flow—whether you’re living within your means or spending more than you earn.",
-                "Identifying Spending Patterns": "By keeping track of where your money goes, you can identify unnecessary expenses and make adjustments to improve your financial situation."
+              "Key Components of a Business Plan": {
+                "Executive Summary": "A brief overview of your business, including your mission statement, business model, and objectives.",
+                "Business Description": "Detailed information about your business, including the industry, target market, and competitive landscape.",
+                "Products or Services": "A description of the products or services you will offer, including pricing, features, and benefits.",
+                "Marketing Strategy": "Your plan for promoting your business, reaching your target market, and differentiating yourself from competitors.",
+                "Operations Plan": "How your business will be run on a day-to-day basis, including location, equipment, technology, and personnel.",
+                "Financial Plan": "An overview of your business’s financial needs, including startup costs, revenue projections, and funding sources."
               },
-              "Methods for Tracking Finances": {
-                "Manual Tracking": {
-                  "Method": "Writing down all income and expenses in a notebook or on a spreadsheet.",
-                  "Advantages": "Low-cost and straightforward, but requires discipline and consistency."
-                },
-                "Digital Tools": {
-                  "Budgeting Apps": "There are various apps available that automatically track income and expenses by linking to your bank accounts.",
-                  "Spreadsheets": "Use templates available online to create and maintain a digital budget.",
-                  "Bank Statements": "Regularly reviewing your bank and credit card statements to categorise and track expenses."
-                }
+              "Importance of a Business Plan": {
+                "Guidance": "A business plan serves as a roadmap for starting and growing your business, helping you stay focused on your goals.",
+                "Attracting Investors": "A well-written business plan is essential for securing funding from investors or lenders."
               },
-              "Balancing Your Budget": {
-                "Surplus vs. Deficit": {
-                  "Surplus": "When your income exceeds your expenses, you have a surplus. This extra money can be used for savings, investments, or paying off debt faster.",
-                  "Deficit": "When your expenses exceed your income, you have a deficit. This situation can lead to debt if not corrected by reducing expenses or increasing income."
-                },
-                "Adjusting the Budget": {
-                  "Expense Reduction": "Identify non-essential expenses that can be cut or reduced.",
-                  "Income Increase": "Consider ways to increase your income, such as taking on extra work or selling unused items."
-                }
-              },
-              "Interactive Exercise": "Over the course of a week, students track all of their expenses, categorising them as fixed, variable, or savings. They will then compare their actual spending with their budgeted amounts and reflect on any discrepancies."
+              "Case Study": "Present a sample business plan for a small business, such as a coffee shop or an online store. Discuss how the plan addresses key areas like market research, product offerings, and financial projections."
             }
           },
           "4": {
-            "Title": "Conclusion and Reflection",
+            "Title": "Registering and Setting Up Your Business",
             "Subsections": {
-              "Recap of Key Points": [
-                "Components of a Budget: Understanding the different elements of a budget—income, fixed and variable expenses, savings, and debt repayment—is crucial to managing your finances.",
-                "Tracking Finances: Regularly monitoring your income and expenses helps you stay on track with your budget and make informed financial decisions."
-              ]
+              "Legal Structure": {
+                "Sole Trader": "The simplest business structure where the owner is personally responsible for all aspects of the business.",
+                "Partnership": "A business owned by two or more people who share profits, losses, and responsibilities.",
+                "Company": "A more complex structure where the business is a separate legal entity from its owners, offering limited liability protection."
+              },
+              "Registering Your Business": {
+                "Business Name Registration": "Register your business name with the Australian Securities and Investments Commission (ASIC) to legally operate under that name.",
+                "Australian Business Number (ABN)": "Apply for an ABN, which is required for tax purposes and to conduct business in Australia.",
+                "Licenses and Permits": "Depending on your industry, you may need specific licenses or permits to operate legally."
+              },
+              "Setting Up Operations": {
+                "Location and Equipment": "Determine where your business will operate and what equipment or technology you’ll need to run it efficiently.",
+                "Hiring Staff": "If necessary, plan for hiring employees, including understanding employment laws and setting up payroll systems."
+              },
+              "Interactive Activity": "Provide students with a checklist for registering and setting up a small business. They can use this checklist to think through the steps they would need to take to launch their business idea."
             }
           }
         }
       },
-      "Lesson 2.2": {
-        "Title": "Strategies for Saving",
+      "Lesson 10.2": {
+        "Title": "Real Estate Investment",
         "Sections": {
           "1": {
-            "Title": "The Importance of Saving",
+            "Title": "Introduction to Real Estate Investment",
             "Subsections": {
-              "Why is Saving Important?": {
-                "Financial Security": {
-                  "Emergency Fund": "Having savings set aside for emergencies helps you handle unexpected expenses, such as medical bills or car repairs, without going into debt.",
-                  "Peace of Mind": "Knowing you have money saved can reduce financial stress and provide a safety net during uncertain times."
-                },
-                "Achieving Financial Goals": {
-                  "Short-Term Goals": "Saving allows you to afford things like a new phone, a holiday, or special events without borrowing money.",
-                  "Long-Term Goals": "Savings are essential for larger life goals such as buying a house, starting a business, or retirement."
-                },
-                "Building Wealth": {
-                  "Interest and Investments": "Money saved can grow over time through interest in a savings account or by being invested in higher-return opportunities. The earlier you start saving, the more time your money has to grow."
-                }
+              "What is Real Estate Investment?": {
+                "Definition": "Real estate investment involves purchasing property to generate income, build wealth, or achieve long-term financial goals. This can include residential, commercial, or industrial properties."
               },
-              "Discussion Prompt": "Ask students to think about something they want to save for. Discuss how saving can help them achieve this goal without relying on credit or loans."
+              "Types of Real Estate": {
+                "Residential": "Houses, apartments, and units that are rented out or sold to individuals and families.",
+                "Commercial": "Office buildings, retail spaces, and warehouses leased to businesses.",
+                "Industrial": "Factories, manufacturing plants, and distribution centers used for industrial purposes."
+              },
+              "Discussion Prompt": "Ask students if they know anyone who has invested in real estate, either by buying a home or owning rental properties. Discuss what they think are the benefits and risks of real estate investment."
             }
           },
           "2": {
-            "Title": "Types of Savings Accounts in Australia",
+            "Title": "Buying vs. Renting Property",
             "Subsections": {
-              "Understanding Savings Accounts": {
-                "What is a Savings Account?": {
-                  "Definition": "A savings account is a type of bank account designed to hold money that you do not need immediately, allowing it to earn interest over time."
+              "Benefits and Drawbacks of Buying": {
+                "Pros of Buying": {
+                  "Building Equity": "As you pay off your mortgage, you build equity in the property, which can be a significant financial asset over time.",
+                  "Stability": "Homeownership offers stability, as you have control over your living space and are not subject to rent increases or eviction.",
+                  "Potential for Appreciation": "Property values can increase over time, potentially leading to capital gains when you sell."
+                },
+                "Cons of Buying": {
+                  "High Upfront Costs": "Buying a property requires a significant down payment, closing costs, and ongoing expenses like mortgage payments, property taxes, and maintenance.",
+                  "Risk of Depreciation": "Property values can also decrease due to market conditions, potentially leading to financial losses.",
+                  "Lack of Flexibility": "Owning a home can tie you down to a specific location, making it harder to move for job opportunities or personal reasons."
                 }
               },
-              "Common Types of Savings Accounts": {
-                "High-Interest Savings Accounts": {
-                  "Features": "These accounts offer higher interest rates compared to regular transaction accounts, encouraging you to save more by rewarding you with interest on your balance.",
-                  "Pros": "Higher interest rates mean your money grows faster.",
-                  "Cons": "These accounts may have conditions, such as needing to deposit a certain amount each month to earn the maximum interest rate.",
-                  "Example": "ANZ Progress Saver, Commonwealth Bank GoalSaver."
+              "Benefits and Drawbacks of Renting": {
+                "Pros of Renting": {
+                  "Lower Upfront Costs": "Renting generally requires a smaller upfront payment (typically a security deposit and first month’s rent), making it more accessible.",
+                  "Flexibility": "Renting offers greater flexibility to move to different locations without the long-term commitment of homeownership.",
+                  "No Maintenance Costs": "Landlords are typically responsible for property maintenance and repairs, reducing financial responsibilities for tenants."
                 },
-                "Online Savings Accounts": {
-                  "Features": "Typically offer higher interest rates and lower fees because they are managed online without the overhead costs of physical branches.",
-                  "Pros": "Easy to manage online with higher interest rates and fewer fees.",
-                  "Cons": "Limited access to in-person support.",
-                  "Example": "ING Savings Maximiser, UBank USaver."
-                },
-                "Term Deposits": {
-                  "Features": "With a term deposit, you lock your money away for a fixed term (e.g., 6 months, 1 year) in exchange for a guaranteed interest rate.",
-                  "Pros": "Guaranteed interest rates make it a secure option for risk-averse savers.",
-                  "Cons": "Penalties for withdrawing money before the term ends, and usually lower returns compared to more flexible accounts.",
-                  "Example": "NAB Term Deposit, Westpac Term Deposit."
-                },
-                "Bonus Savings Accounts": {
-                  "Features": "These accounts offer bonus interest if you meet certain conditions, such as not making any withdrawals or making regular deposits.",
-                  "Pros": "Encourages regular saving and offers higher interest when conditions are met.",
-                  "Cons": "If conditions are not met, the interest rate can be much lower.",
-                  "Example": "Commonwealth Bank Youthsaver, Westpac Life."
+                "Cons of Renting": {
+                  "No Equity Building": "Rent payments do not build equity, meaning renters do not gain financial ownership of the property.",
+                  "Rent Increases": "Rent can increase over time, which might make it more expensive to stay in the same location.",
+                  "Less Control": "Renters have limited control over the property, including restrictions on renovations, pets, and even lease renewals."
                 }
               },
-              "Interactive Exercise": "Provide students with details of various savings accounts available in Australia. Ask them to compare the features, interest rates, and conditions to decide which account would best suit their needs. They can then present their choice to the class, explaining why they chose that particular account."
+              "Interactive Activity": "Provide students with access to a rent vs. buy calculator. Have them input different scenarios (e.g., length of stay, property value, rent prices) to compare the financial outcomes of renting versus buying a property. Discuss the results and what factors might influence their decision."
             }
           },
           "3": {
-            "Title": "Developing a Savings Strategy",
+            "Title": "Property Investment Strategies",
             "Subsections": {
-              "Setting Savings Goals": {
-                "SMART Goals": "Reinforce the use of the SMART (Specific, Measurable, Achievable, Relevant, Time-bound) framework for setting saving goals, as discussed in the previous lesson."
+              "Buy and Hold": {
+                "What is Buy and Hold?": {
+                  "Definition": "Buy and hold is a long-term investment strategy where an investor purchases property and holds onto it for an extended period, often renting it out to generate income while waiting for the property to appreciate in value."
+                },
+                "Advantages": {
+                  "Steady Rental Income": "Generates regular cash flow from rent, which can help cover mortgage payments and other expenses.",
+                  "Appreciation Potential": "The property’s value may increase over time, leading to significant capital gains when sold."
+                },
+                "Risks": {
+                  "Market Fluctuations": "Property values can decline due to economic downturns, leading to potential losses if the property needs to be sold during a low market.",
+                  "Management Responsibilities": "Owning rental properties requires ongoing management, including tenant relations, maintenance, and repairs."
+                },
+                "Interactive Activity": "Simulate a buy and hold scenario where students choose a property to invest in, estimate rental income, and calculate potential appreciation over time. They should consider factors like location, property type, and market conditions."
               },
-              "Creating a Savings Plan": {
-                "Automatic Transfers": "Set up automatic transfers from your transaction account to your savings account on payday to ensure you save regularly.",
-                "Start Small": "Begin with an achievable savings target, and gradually increase the amount as you become more comfortable with saving.",
-                "Monitor Progress": "Regularly check your savings account to monitor progress and stay motivated. Adjust your plan as needed to stay on track."
+              "Flipping": {
+                "What is Flipping?": {
+                  "Definition": "Flipping involves buying a property at a lower price, often in need of renovation, improving it, and then selling it quickly for a profit."
+                },
+                "Advantages": {
+                  "Quick Profits": "If successful, flipping can yield high returns in a relatively short period.",
+                  "Opportunities for Creativity": "Investors can add value through renovations, design, and improvements."
+                },
+                "Risks": {
+                  "Renovation Costs": "Unexpected renovation costs can eat into profits, especially if the project goes over budget or takes longer than expected.",
+                  "Market Timing": "Flipping relies heavily on market timing; a downturn in the real estate market can make it difficult to sell the property at a profit."
+                },
+                "Case Study": "Present a case where an investor flips a property. Discuss the steps involved, including purchasing the property, budgeting for renovations, and selling it. Have students evaluate the risks and potential rewards of flipping, including what could go wrong."
               },
-              "Reflection Activity": "Students will develop a savings plan using the SMART framework and choose the most suitable savings account to help them reach their goal. They will outline how much they plan to save, how often, and why they chose their particular account."
+              "Real Estate Investment Trusts (REITs)": {
+                "What are REITs?": {
+                  "Definition": "A Real Estate Investment Trust (REIT) is a company that owns, operates, or finances income-producing real estate. Investors can buy shares in REITs to gain exposure to real estate without directly owning property."
+                },
+                "Advantages": {
+                  "Liquidity": "REITs are traded on stock exchanges, making it easy to buy and sell shares.",
+                  "Diversification": "REITs offer diversification across multiple properties and types of real estate, reducing individual risk.",
+                  "Income": "REITs typically pay regular dividends, providing investors with income without the need to manage properties directly."
+                },
+                "Risks": {
+                  "Market Volatility": "REITs can be affected by stock market volatility, which can lead to fluctuations in share prices.",
+                  "Management Fees": "Some REITs charge management fees that can reduce overall returns."
+                },
+                "Interactive Exercise": "Have students research different REITs and analyse their performance, including dividend yields, historical returns, and the types of properties they invest in. Discuss how REITs compare to direct property investment in terms of risk and reward."
+              }
             }
           },
           "4": {
             "Title": "Conclusion and Reflection",
             "Subsections": {
               "Recap of Key Points": [
-                "Importance of Saving: Saving is crucial for financial security, achieving goals, and building wealth.",
-                "Types of Savings Accounts: Different accounts offer different benefits, and it's important to choose one that aligns with your financial goals."
+                "Buying vs. Renting: The decision to buy or rent depends on personal circumstances, financial stability, and market conditions. Each option has its benefits and drawbacks.",
+                "Property Investment Strategies: There are various strategies for investing in real estate, including buy and hold, flipping, and investing in REITs. Each strategy carries different levels of risk and potential reward."
               ]
-            }
-          }
-        }
-      },
-      "Lesson 2.3": {
-        "Title": "Managing Expenses",
-        "Sections": {
-          "1": {
-            "Title": "Introduction to Managing Expenses",
-            "Subsections": {
-              "Why Managing Expenses is Important": {
-                "Financial Stability": "Properly managing expenses ensures that you live within your means, avoid debt, and have money available for saving and investing.",
-                "Achieving Financial Goals": "By controlling your spending, you can allocate more funds toward your financial goals, such as saving for a trip or buying a car.",
-                "Preventing Financial Stress": "When you manage your expenses well, you reduce the risk of overspending and the financial stress that comes with it."
-              },
-              "Discussion Prompt": "Begin with a conversation about why it's important to manage expenses. Ask students how they currently manage their spending and what challenges they face."
-            }
-          },
-          "2": {
-            "Title": "Identifying Needs vs. Wants",
-            "Subsections": {
-              "Understanding Needs and Wants": {
-                "Needs": {
-                  "Definition": "Needs are essential expenses required for basic survival and well-being. These are things you must have to live and function daily.",
-                  "Examples": "Food, shelter, clothing, utilities, healthcare, transportation, and education."
-                },
-                "Wants": {
-                  "Definition": "Wants are non-essential items or services that enhance your lifestyle but are not necessary for basic survival.",
-                  "Examples": "Dining out, entertainment, luxury items, hobbies, and vacations."
-                }
-              },
-              "Interactive Activity": "Provide students with a list of various expenses (e.g., groceries, Netflix subscription, mobile phone plan, designer clothes). Have them categorise each item as a 'need' or a 'want' and then discuss their choices with the class."
-            }
-          },
-          "3": {
-            "Title": "Tips for Reducing Expenses",
-            "Subsections": {
-              "Practical Strategies to Cut Costs": {
-                "Review and Adjust Spending Habits": {
-                  "Track Spending": "Regularly review your expenses to identify areas where you can cut back. Use budgeting apps or maintain a spending journal.",
-                  "Limit Impulse Purchases": "Before buying something non-essential, take a moment to consider whether it's a need or a want. Implement the '24-hour rule' where you wait a day before making a purchase to see if you still want it."
-                },
-                "Reduce Fixed Expenses": {
-                  "Downsize Subscriptions": "Evaluate your subscriptions (e.g., streaming services, gym memberships) and cancel or downgrade those you don't use frequently.",
-                  "Negotiate Bills": "Contact service providers (e.g., internet, insurance) to negotiate better rates or switch to more affordable plans."
-                },
-                "Cut Back on Variable Expenses": {
-                  "Meal Planning": "Plan meals ahead of time to avoid eating out frequently and reduce food waste.",
-                  "Use Public Transport": "Instead of driving, consider using public transport, cycling, or carpooling to save on fuel and parking costs.",
-                  "Energy Efficiency": "Save on utilities by adopting energy-saving habits, such as turning off lights when not in use, using energy-efficient appliances, and reducing water usage."
-                }
-              },
-              "Interactive Exercise": "Have students create a plan to reduce their personal expenses. They can choose one fixed expense and one variable expense to focus on, then outline the steps they’ll take to cut costs in these areas."
-            }
-          },
-          "4": {
-            "Title": "Conclusion and Reflection",
-            "Subsections": {
-              "Recap of Key Points": [
-                "Identifying Needs vs. Wants: Distinguishing between needs and wants is crucial for effective budgeting and financial management.",
-                "Reducing Expenses: Implementing practical tips for reducing both fixed and variable expenses can help you save money and achieve your financial goals."
-              ],
-              "Looking Forward": {
-                "What’s Next": "In the next lesson, we will explore different types of income, including earned, passive, and portfolio income, and how to maximise your earnings."
-              },
-              "Final Reflection": "Students will reflect on their spending habits and identify one or two areas where they can reduce expenses. They will write down their reflections and create a personal action plan to manage their expenses better."
             }
           }
         }

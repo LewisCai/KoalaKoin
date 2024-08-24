@@ -17,23 +17,30 @@ const Course = () => {
     { id: 'M9', title: "Module 9: Planning for the Future", lessons: [{ id: 'Lesson 9.1', title: "Lesson 9.1: Financial Planning" }, { id: 'Lesson 9.2', title: "Lesson 9.2: Retirement Planning" }, { id: 'Lesson 9.3', title: "Lesson 9.3: Estate Planning" }] },
     { id: 'M10', title: "Module 10: Advanced Topics", lessons: [{ id: 'Lesson 10.1', title: "Lesson 10.1: Entrepreneurship" }, { id: 'Lesson 10.2', title: "Lesson 10.2: Real Estate Investment" }, { id: 'Lesson 10.3', title: "Lesson 10.3: Financial Technology (FinTech)" }] },
   ];
-  
+
   const handleLessonClick = (moduleId, lessonKey) => {
     navigate(`/module/${moduleId}?lesson=${lessonKey}`);
   };
 
   return (
     <div className="course-container">
-      {modules.map((module, index) => (
-        <div key={index} className="module">
-          <h2 onClick={() => handleLessonClick(module.id)}>{module.title}</h2>
-          <ul className="lessons">
-            {module.lessons.map((lesson, idx) => (
-              <li key={idx} onClick={() => handleLessonClick(module.id, lesson.id)}>{lesson.title}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {modules.map((module, index) => {
+        const firstLessonId = module.lessons?.[0]?.id;
+
+        return (
+          <div key={index} className="module">
+            {/* Redirect to the first lesson if it exists */}
+            <h2 onClick={() => firstLessonId ? handleLessonClick(module.id, firstLessonId) : console.error('No lessons available')}>
+              {module.title}
+            </h2>
+            <ul className="lessons">
+              {module.lessons.map((lesson, idx) => (
+                <li key={idx} onClick={() => handleLessonClick(module.id, lesson.id)}>{lesson.title}</li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 };
