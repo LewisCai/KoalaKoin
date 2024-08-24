@@ -1,55 +1,102 @@
-
 .course-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-height: 100vh; /* Ensure the content fits within the viewport */
-    overflow-y: auto; /* Make the page scrollable */
-    display: flex; /* Enable flexbox for column layout */
-    flex-wrap: wrap; /* Allow items to wrap into multiple lines */
-    max-width: 80%; /* Limit the container width to 80% of the viewport */
-    margin: 0 auto; /* Center the container horizontally */
-    
-    .module {
-      flex: 1 1 30%; /* Adjust the width of the modules for a multi-column layout */
-      margin-bottom: 40px;
-      padding-right: 20px; /* Add some space between columns */
-  
-      h2 {
-        font-size: 25px; /* Make the module titles smaller */
-        color: #2c3e50;
-        margin-bottom: 8px;
-        cursor: pointer; /* Make module titles clickable */
-    
-        &:hover {
-          color: #2980b9; /* Change color on hover for better UX */
-          text-decoration: underline; /* Optional: Add underline to indicate clickability */
-        }
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-height: 100vh;
+  /* Ensure the content fits within the viewport */
+  overflow-y: auto;
+  /* Make the page scrollable */
+  display: flex;
+  /* Enable flexbox for column layout */
+  flex-wrap: wrap;
+  /* Allow items to wrap into multiple lines */
+  max-width: 80%;
+  /* Limit the container width to 80% of the viewport */
+  margin: 0 auto;
+  /* Center the container horizontally */
+
+  .module {
+    flex: 1 1 30%;
+    /* Adjust the width of the modules for a multi-column layout */
+    margin-bottom: 40px;
+    padding-right: 20px;
+    /* Add some space between columns */
+
+    h2 {
+      font-size: 25px;
+      /* Make the module titles smaller */
+      color: #2c3e50;
+      margin-bottom: 8px;
+      cursor: pointer;
+      /* Make module titles clickable */
+
+      &:hover {
+        color: #2980b9;
+        /* Change color on hover for better UX */
+        text-decoration: underline;
+        /* Optional: Add underline to indicate clickability */
       }
-    
-      .lessons {
-        list-style-type: none;
-        padding-left: 0; /* Remove left padding */
-    
-        li {
-          font-size: 20px; /* Make the lesson text smaller */
-          color: #64b2ff;
-          margin-bottom: 5px;
-          cursor: pointer; /* Make lessons clickable */
-    
-          &::before {
-            content: "•";
-            color: #2980b9;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-          }
-    
-          &:hover {
-            color: #2980b9; /* Change color on hover for better UX */
-            text-decoration: underline; /* Optional: Add underline to indicate clickability */
-          }
+    }
+
+    .lessons {
+      list-style-type: none;
+      padding-left: 0;
+      /* Remove left padding */
+
+      li {
+        font-size: 20px;
+        /* Make the lesson text smaller */
+        color: #64b2ff;
+        margin-bottom: 5px;
+        cursor: pointer;
+        /* Make lessons clickable */
+
+        &::before {
+          content: "•";
+          color: #2980b9;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1em;
+        }
+
+        &:hover {
+          color: #2980b9;
+          /* Change color on hover for better UX */
+          text-decoration: underline;
+          /* Optional: Add underline to indicate clickability */
         }
       }
     }
   }
-  
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .course-container {
+      padding: 15px;
+      /* Adjust padding for mobile */
+      max-width: 100%;
+      /* Full width for mobile */
+    }
+
+    .module {
+      padding-right: 0;
+      margin-top: 50px;
+      /* Remove right padding for full-width modules */
+      margin-bottom: 20px;
+      /* Adjust margin for better spacing */
+    }
+
+    h2 {
+      font-size: 22px;
+      /* Increase font size slightly for readability */
+      padding: 12px;
+      /* Increase padding for better touch target */
+    }
+
+    .lessons li {
+      font-size: 16px;
+      /* Reduce lesson text size for better fit */
+      padding: 10px 15px;
+      /* Adjust padding for touch-friendly design */
+    }
+  }
+}
